@@ -9,7 +9,7 @@
 git clone https://github.com/sirlucjan/kf5-git.git
 
 ```
-# Install
+# Install:
 
 ```
 cd /some-path/kf5-git/package_name.git
