@@ -1,7 +1,7 @@
 #   KF5 - GIT for Arch Linux
 
-#   That is a git version of KF5.
-#   DO NOT run this in production.
+
+
 
 # Download:
 
@@ -59,6 +59,7 @@ git clone https://github.com/sirlucjan/kf5-git.git
 * kinit
 * knotifyconfig
 * kparts
+* kactivities
 * kded
 * kdewebkit
 * syntax-highlighting
