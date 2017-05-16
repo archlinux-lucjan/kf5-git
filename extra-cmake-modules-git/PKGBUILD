@@ -1,0 +1,44 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: FadeMind <fademind@gmail.com>
+# Contributor: Alexey D. <lq07829icatm@rambler.ru>
+
+pkgname=extra-cmake-modules-git
+pkgver=5.35.0.r2883.gc61aee8
+pkgrel=1
+pkgdesc='Extra modules and scripts for CMake'
+arch=('any')
+url='https://projects.kde.org/projects/kdesupport/extra-cmake-modules'
+license=('LGPL')
+depends=('cmake')
+makedepends=('git' 'python-sphinx')
+conflicts=('extra-cmake-modules')
+provides=('extra-cmake-modules')
+source=('git://anongit.kde.org/extra-cmake-modules.git')
+sha1sums=('SKIP')
+
+pkgver() {
+  cd extra-cmake-modules
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../extra-cmake-modules \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_QTHELP_DOCS=ON \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="${pkgdir}" install
+}

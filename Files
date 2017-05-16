@@ -1,0 +1,154 @@
+.
+├── Files
+├── README.md
+├── attica-qt5-git
+│   └── PKGBUILD
+├── baloo-git
+│   └── PKGBUILD
+├── bluez-qt-git
+│   └── PKGBUILD
+├── breeze-icons-git
+│   └── PKGBUILD
+├── extra-cmake-modules-git
+│   └── PKGBUILD
+├── frameworkintegration-git
+│   └── PKGBUILD
+├── kactivities-git
+│   └── PKGBUILD
+├── kactivities-stats-git
+│   └── PKGBUILD
+├── kapidox-git
+│   └── PKGBUILD
+├── karchive-git
+│   └── PKGBUILD
+├── kauth-git
+│   └── PKGBUILD
+├── kbookmarks-git
+│   └── PKGBUILD
+├── kcmutils-git
+│   └── PKGBUILD
+├── kcodecs-git
+│   └── PKGBUILD
+├── kcompletion-git
+│   └── PKGBUILD
+├── kconfig-git
+│   └── PKGBUILD
+├── kconfigwidgets-git
+│   └── PKGBUILD
+├── kcoreaddons-git
+│   └── PKGBUILD
+├── kcrash-git
+│   └── PKGBUILD
+├── kdbusaddons-git
+│   └── PKGBUILD
+├── kdeclarative-git
+│   └── PKGBUILD
+├── kded-git
+│   └── PKGBUILD
+├── kdelibs4support-git
+│   └── PKGBUILD
+├── kdesignerplugin-git
+│   └── PKGBUILD
+├── kdesu-git
+│   └── PKGBUILD
+├── kdewebkit-git
+│   └── PKGBUILD
+├── kdnssd-git
+│   └── PKGBUILD
+├── kdoctools-git
+│   └── PKGBUILD
+├── kemoticons-git
+│   └── PKGBUILD
+├── kfilemetadata-git
+│   └── PKGBUILD
+├── kglobalaccel-git
+│   └── PKGBUILD
+├── kguiaddons-git
+│   └── PKGBUILD
+├── khtml-git
+│   └── PKGBUILD
+├── ki18n-git
+│   └── PKGBUILD
+├── kiconthemes-git
+│   └── PKGBUILD
+├── kidletime-git
+│   └── PKGBUILD
+├── kimageformats-git
+│   └── PKGBUILD
+├── kinit-git
+│   └── PKGBUILD
+├── kio-git
+│   └── PKGBUILD
+├── kitemmodels-git
+│   └── PKGBUILD
+├── kitemviews-git
+│   └── PKGBUILD
+├── kjobwidgets-git
+│   └── PKGBUILD
+├── kjs-git
+│   └── PKGBUILD
+├── kjsembed-git
+│   └── PKGBUILD
+├── kmediaplayer-git
+│   └── PKGBUILD
+├── knewstuff-git
+│   └── PKGBUILD
+├── knotifications-git
+│   └── PKGBUILD
+├── knotifyconfig-git
+│   └── PKGBUILD
+├── kpackage-git
+│   └── PKGBUILD
+├── kparts-git
+│   └── PKGBUILD
+├── kpeople-git
+│   └── PKGBUILD
+├── kplotting-git
+│   └── PKGBUILD
+├── kpty-git
+│   └── PKGBUILD
+├── kross-git
+│   └── PKGBUILD
+├── krunner-git
+│   └── PKGBUILD
+├── kservice-git
+│   └── PKGBUILD
+├── ktexteditor-git
+│   └── PKGBUILD
+├── ktextwidgets-git
+│   └── PKGBUILD
+├── kunitconversion-git
+│   └── PKGBUILD
+├── kwallet-git
+│   └── PKGBUILD
+├── kwayland-git
+│   └── PKGBUILD
+├── kwidgetsaddons-git
+│   └── PKGBUILD
+├── kwindowsystem-git
+│   └── PKGBUILD
+├── kxmlgui-git
+│   └── PKGBUILD
+├── kxmlrpcclient-git
+│   └── PKGBUILD
+├── modemmanager-qt-git
+│   └── PKGBUILD
+├── networkmanager-qt-git
+│   └── PKGBUILD
+├── oxygen-icons-git
+│   └── PKGBUILD
+├── plasma-framework-git
+│   └── PKGBUILD
+├── prison-git
+│   └── PKGBUILD
+├── solid-git
+│   └── PKGBUILD
+├── sonnet-git
+│   └── PKGBUILD
+├── syntax-highlighting-git
+│   ├── PKGBUILD
+│   └── pkgbuild-syntax-highlight.patch
+└── threadweaver-git
+    └── PKGBUILD
+
+74 directories, 77 files

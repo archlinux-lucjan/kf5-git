@@ -1,0 +1,44 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Pierre Schmitz <pierre@archlinux.de>
+
+pkgname=oxygen-icons-git
+_pkgname=oxygen-icons5
+pkgver=5.35.0.r113.g1b641f8
+pkgrel=1
+pkgdesc="The Oxygen Icon Theme"
+arch=('any')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+makedepends=('extra-cmake-modules' 'qt5-base')
+provides=('oxygen-icons')
+conflicts=('oxygen-icons')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+            
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package() {
+  groups=('kf5-git')
+
+  cd build
+  make DESTDIR="$pkgdir" install
+}

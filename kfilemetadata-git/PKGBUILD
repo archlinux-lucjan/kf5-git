@@ -1,0 +1,45 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=kfilemetadata-git
+_pkgname=kfilemetadata
+pkgver=5.35.0.r343.g4829ff0
+pkgrel=1
+pkgdesc="A library for extracting file metadata"
+arch=('i686' 'x86_64')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+depends=('ki18n' 'karchive' 'exiv2' 'poppler-qt5' 'taglib' 'ffmpeg' 'ebook-tools')
+optdepends=('catdoc: Extract text from office 98 files')
+makedepends=('extra-cmake-modules' 'catdoc' 'python')
+provides=('kfilemetadata')
+conflicts=('kfilemetadata')
+groups=('kf5-git')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+            
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="${pkgdir}" install
+}

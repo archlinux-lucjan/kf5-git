@@ -1,0 +1,45 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Antonio Rojas
+
+pkgname=breeze-icons-git
+_pkgname=breeze-icons
+pkgver=5.35.0.r1019.gab665636
+pkgrel=1
+pkgdesc='Breeze icon themes'
+arch=('any')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+groups=('kf5-git')
+makedepends=('extra-cmake-modules' 'qt5-base')
+provides=('breeze-icons')
+conflicts=('breeze-icons')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+prepare() {
+  mkdir -p build
+}
+   
+            
+prepare() {
+  mkdir -p build
+  #sed -i 's/KF5_DEP_VERSION "5.34.0"/KF5_DEP_VERSION "5.33.0"/g' ~/Pracownia/Pozniej/kde/$pkgname/src/$_pkgname/CMakeLists.txt 
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBINARY_ICONS_RESOURCE=ON \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

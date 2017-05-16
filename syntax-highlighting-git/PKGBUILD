@@ -1,0 +1,50 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=syntax-highlighting-git
+_pkgname=syntax-highlighting
+pkgver=5.35.0.r452.gc04f9b4
+pkgrel=1
+pkgdesc='Syntax highlighting engine for structured text and code'
+arch=(i686 x86_64)
+url='https://community.kde.org/Frameworks'
+license=(GPL2)
+depends=(qt5-base)
+makedepends=(extra-cmake-modules qt5-xmlpatterns qt5-tools)
+provides=('syntax-highlighting')
+conflicts=('syntax-highlighting')
+groups=(kf5-git)
+source=("git://anongit.kde.org/$_pkgname.git"
+        pkgbuild-syntax-highlight.patch)
+sha256sums=('SKIP'
+            '0de3f92677e41f299278d3a9adaa012822576248fd1c4e86f5dd25e2790a4d81')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+            
+prepare() {
+  mkdir -p build
+  # Add PKGBUILD syntax highlighting
+  cd $_pkgname
+  patch -p1 -i ../pkgbuild-syntax-highlight.patch
+}
+
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_LIBDIR=lib
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,45 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=kmediaplayer-git
+_pkgname=kmediaplayer
+pkgver=5.35.0.r136.gc7df752
+pkgrel=1
+pkgdesc='Plugin interface for media player features'
+arch=('i686' 'x86_64')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+depends=('kparts')
+makedepends=('extra-cmake-modules' 'python')
+provides=('kmediaplayer')
+conflicts=('kmediaplayer')
+groups=('kf5-aids-git')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+            
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="${pkgdir}" install
+}

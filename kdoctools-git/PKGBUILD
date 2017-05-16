@@ -1,0 +1,46 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=kdoctools-git
+_pkgname=kdoctools
+pkgver=5.35.0.r362.ga54883c
+pkgrel=1
+pkgdesc='Documentation generation from docbook'
+arch=('i686' 'x86_64')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+depends=('karchive' 'docbook-xsl')
+makedepends=('extra-cmake-modules' 'ki18n' 'python' 'perl-uri')
+provides=('kdoctools')
+conflicts=('kdoctools')
+groups=('kf5-git')
+options=('staticlibs')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+            
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="${pkgdir}" install
+}

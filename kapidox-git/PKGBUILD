@@ -1,0 +1,43 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=kapidox-git
+_pkgname=kapidox
+pkgver=5.35.0.r389.g394b017
+pkgrel=1
+pkgdesc='Frameworks API Documentation Tools'
+arch=('any')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+depends=('python-jinja' 'python-yaml')
+makedepends=('extra-cmake-modules' 'qt5-base')
+provides=('kapidox')
+conflicts=('kapidox')
+groups=('kf5-git')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat setup.py | grep -m1 version | grep -o "[[:digit:]]*" | paste -sd'.')"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+            
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="${pkgdir}" install
+}

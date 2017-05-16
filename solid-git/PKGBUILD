@@ -1,0 +1,46 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=solid-git
+_pkgname=solid
+pkgver=5.35.0.r337.g5121ef4
+pkgrel=1
+pkgdesc='Hardware integration and detection'
+arch=('i686' 'x86_64')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+depends=('qt5-declarative' 'media-player-info' 'upower' 'udisks2')
+makedepends=('extra-cmake-modules' 'qt5-tools')
+provides=('solid')
+conflicts=('solid')
+groups=('kf5-git')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+
+            
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="${pkgdir}" install
+}

@@ -1,0 +1,46 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=ki18n-git
+_pkgname=ki18n
+pkgver=5.35.0.r219.gbb62780
+pkgrel=1
+pkgdesc='Advanced internationalization framework'
+arch=('i686' 'x86_64')
+url='https://community.kde.org/Frameworks'
+license=('LGPL')
+depends=('qt5-script')
+makedepends=('extra-cmake-modules' 'python' 'qt5-declarative' 'python-pyqt5' 'python2-pyqt5' 'clang')
+optdepends=('python-pykf5-git: to use the Python 3 bindings' 'python2-pykf5-git: to use the Python 2 bindings')
+provides=('ki18n')
+conflicts=('ki18n')
+groups=('kf5-git')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+   
+            
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="${pkgdir}" install
+}
