@@ -87,6 +87,7 @@ makepkg -srci
 * kactivities-stats
 * krunner
 * prison
+* kirigami2
 * kjs
 * kdelibs4support
 * khtml
