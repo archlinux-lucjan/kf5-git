@@ -79,6 +79,8 @@
 │   └── PKGBUILD
 ├── kio-git
 │   └── PKGBUILD
+├── kirigami2-git
+│   └── PKGBUILD
 ├── kitemmodels-git
 │   └── PKGBUILD
 ├── kitemviews-git
@@ -151,4 +153,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-74 directories, 77 files
+75 directories, 78 files

@@ -1,0 +1,43 @@
+# $Id: PKGBUILD 276984 2016-09-26 18:41:01Z arojas $
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=kirigami2-git
+_pkgname=kirigami
+pkgver=5.37.0.r1082.gf539a5b
+pkgrel=1
+pkgdesc='A QtQuick based components set'
+arch=(i686 x86_64)
+url='https://community.kde.org/Frameworks'
+license=(LGPL)
+depends=(qt5-quickcontrols2)
+makedepends=(extra-cmake-modules qt5-tools plasma-framework)
+provides=('kirigami2')
+conflicts=('kirigami2')
+source=("https://download.kde.org/stable/frameworks/${pkgver%.*}/${pkgname}-${pkgver}.tar.xz"{,.sig})
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+prepare() {
+  mkdir -p build
+}
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cd build
+    cmake ../${_pkgname} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+} 
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}
