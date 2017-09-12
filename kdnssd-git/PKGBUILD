@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293008 2017-04-16 09:02:12Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdnssd-git
 _pkgname=kdnssd
-pkgver=5.35.0.r143.gc433fc2
+pkgver=5.39.0.r153.gc684233
 pkgrel=1
 pkgdesc='Abstraction to system DNSSD features'
 arch=('i686' 'x86_64')

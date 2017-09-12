@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293025 2017-04-16 09:02:50Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kmediaplayer-git
 _pkgname=kmediaplayer
-pkgver=5.35.0.r136.gc7df752
+pkgver=5.39.0.r146.gc7005e1
 pkgrel=1
 pkgdesc='Plugin interface for media player features'
 arch=('i686' 'x86_64')

@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292963 2017-04-16 09:00:31Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kcompletion-git
 _pkgname=kcompletion
-pkgver=5.35.0.r202.g9b297c9
+pkgver=5.39.0.r216.gd7bdae0
 pkgrel=1
 pkgdesc='Text completion helpers and widgets'
 arch=('i686' 'x86_64')
@@ -26,6 +26,7 @@ pkgver() {
 }
    
 
+            
 prepare() {
   mkdir -p build
 }

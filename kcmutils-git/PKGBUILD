@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292993 2017-04-16 09:01:34Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kcmutils-git
 _pkgname=kcmutils
-pkgver=5.35.0.r194.ga8254ef
+pkgver=5.39.0.r211.ga30cd84
 pkgrel=1
 pkgdesc='Utilities for interacting with KCModules'
 arch=('i686' 'x86_64')

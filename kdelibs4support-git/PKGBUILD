@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293022 2017-04-16 09:02:45Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdelibs4support-git
 _pkgname=kdelibs4support
-pkgver=5.35.0.r721.g05bfd462
+pkgver=5.39.0.r752.g90a00161
 pkgrel=1
 pkgdesc='Porting aid from KDELibs4'
 arch=('i686' 'x86_64')

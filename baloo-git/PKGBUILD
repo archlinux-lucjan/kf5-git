@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293001 2017-04-16 09:01:53Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=baloo-git
 _pkgname=baloo
-pkgver=5.35.0.r2224.g70b47212
+pkgver=5.39.0.r2241.g4990fd81
 pkgrel=1
 pkgdesc="A framework for searching and managing metadata"
 arch=('i686' 'x86_64')

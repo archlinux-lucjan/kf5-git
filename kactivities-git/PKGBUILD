@@ -1,11 +1,11 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292994 2017-04-16 09:01:36Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kactivities-git
 _pkgname=kactivities
-pkgver=5.35.0.r1146.g858edb7
+pkgver=5.39.0.r1158.gf064770
 pkgrel=1
 arch=('i686' 'x86_64')
 pkgdesc="Core components for the KDE's Activities"

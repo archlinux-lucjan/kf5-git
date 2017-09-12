@@ -1,10 +1,11 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+# $Id: PKGBUILD 293004 2017-04-16 09:01:58Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=frameworkintegration-git
 _pkgname=frameworkintegration
-pkgver=5.35.0.r356.g94e3e85
+pkgver=5.39.0.r373.ge52c7c2
 pkgrel=1
 pkgdesc='Framework providing components to allow applications to integrate with a KDE Workspace'
 arch=('i686' 'x86_64')

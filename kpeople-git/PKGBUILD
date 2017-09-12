@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# $Id: PKGBUILD 293013 2017-04-16 09:02:28Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kpeople-git
 _pkgname=kpeople
-pkgver=5.35.0.r1083.g3805ca7
+pkgver=5.39.0.r1104.g57b1892
 pkgrel=1
 pkgdesc='A library that provides access to all contacts and the people who hold them'
 arch=(i686 x86_64)

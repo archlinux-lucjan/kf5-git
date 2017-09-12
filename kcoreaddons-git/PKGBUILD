@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292955 2017-04-16 09:00:14Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kcoreaddons-git
 _pkgname=kcoreaddons
-pkgver=5.35.0.r591.g333ec6e
+pkgver=5.39.0.r629.g6a27a7a
 pkgrel=1
 pkgdesc='Addons to QtCore'
 arch=('i686' 'x86_64')

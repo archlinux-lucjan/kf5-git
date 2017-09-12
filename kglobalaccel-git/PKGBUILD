@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292971 2017-04-16 09:00:47Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kglobalaccel-git
 _pkgname=kglobalaccel
-pkgver=5.35.0.r203.gd57e34f
+pkgver=5.39.0.r216.gdf429c9
 pkgrel=1
 pkgdesc='Add support for global workspace shortcuts'
 arch=('i686' 'x86_64')

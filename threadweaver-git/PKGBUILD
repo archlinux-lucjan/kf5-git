@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292992 2017-04-16 09:01:32Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=threadweaver-git
 _pkgname=threadweaver
-pkgver=5.35.0.r318.ge896ccd
+pkgver=5.39.0.r332.g74ce6ac
 pkgrel=1
 pkgdesc='High-level multithreading framework'
 arch=('i686' 'x86_64')

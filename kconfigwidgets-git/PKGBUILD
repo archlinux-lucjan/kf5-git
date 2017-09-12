@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292965 2017-04-16 09:00:35Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kconfigwidgets-git
 _pkgname=kconfigwidgets
-pkgver=5.35.0.r256.g9eb9593
+pkgver=5.39.0.r286.g806a524
 pkgrel=1
 pkgdesc='Widgets for KConfig'
 arch=('i686' 'x86_64')

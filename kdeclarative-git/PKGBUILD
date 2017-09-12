@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292985 2017-04-16 09:01:18Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdeclarative-git
 _pkgname=kdeclarative
-pkgver=5.35.0.r510.g3511021
+pkgver=5.39.0.r533.g4907885
 pkgrel=1
 pkgdesc='Provides integration of QML and KDE Frameworks'
 arch=('i686' 'x86_64')

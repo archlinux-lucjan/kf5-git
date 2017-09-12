@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292964 2017-04-16 09:00:33Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kguiaddons-git
 _pkgname=kguiaddons
-pkgver=5.35.0.r147.gc409530
+pkgver=5.39.0.r161.g126d4dc
 pkgrel=1
 pkgdesc='Addons to QtGui'
 arch=('i686' 'x86_64')
@@ -26,7 +26,6 @@ pkgver() {
 }
    
 
-            
 prepare() {
   mkdir -p build
 }

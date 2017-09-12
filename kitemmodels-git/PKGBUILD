@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293011 2017-04-16 09:02:24Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kitemmodels-git
 _pkgname=kitemmodels
-pkgver=5.35.0.r259.g6a50c56
+pkgver=5.39.0.r273.g7fece07
 pkgrel=1
 pkgdesc='Models for Qt Model/View system'
 arch=('i686' 'x86_64')

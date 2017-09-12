@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# $Id: PKGBUILD 293017 2017-04-16 09:02:36Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kxmlrpcclient-git
 _pkgname=kxmlrpcclient
-pkgver=5.35.0.r287.gf0ec5c223
+pkgver=5.39.0.r301.gb9361e942
 pkgrel=1
 pkgdesc="XML-RPC client library for KDE"
 arch=('i686' 'x86_64')

@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292975 2017-04-16 09:00:55Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=ktextwidgets-git
 _pkgname=ktextwidgets
-pkgver=5.35.0.r166.gdf8bffd
+pkgver=5.39.0.r184.gb421be0
 pkgrel=1
 pkgdesc='Advanced text editing widgets'
 arch=('i686' 'x86_64')

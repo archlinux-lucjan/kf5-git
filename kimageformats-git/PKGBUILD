@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293010 2017-04-16 09:02:22Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kimageformats-git
 _pkgname=kimageformats
-pkgver=5.35.0.r123.g7be2757
+pkgver=5.38.0.r129.g78aeee7
 pkgrel=1
 pkgdesc='Image format plugins for Qt5'
 arch=('i686' 'x86_64')
@@ -20,11 +20,12 @@ source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
-  cd $_pkgname
+   cd $_pkgname
   _ver="$(cat CMakeLists.txt | grep -m5 'find_package(ECM'| grep -o "[[:digit:]]*" | paste -sd'.')"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
+            
 prepare() {
   mkdir -p build
 }

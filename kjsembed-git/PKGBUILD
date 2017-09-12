@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293024 2017-04-16 09:02:48Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kjsembed-git
 _pkgname=kjsembed
-pkgver=5.35.0.r138.ge6d2b37
+pkgver=5.39.0.r148.g154b258
 pkgrel=1
 pkgdesc='Embedded JS'
 arch=('i686' 'x86_64')

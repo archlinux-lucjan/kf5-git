@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292990 2017-04-16 09:01:28Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kpty-git
 _pkgname=kpty
-pkgver=5.35.0.r145.g11cd996
+pkgver=5.39.0.r158.ge289b80
 pkgrel=1
 pkgdesc='Pty abstraction'
 arch=('i686' 'x86_64')

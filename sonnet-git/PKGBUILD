@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292974 2017-04-16 09:00:53Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=sonnet-git
 _pkgname=sonnet
-pkgver=5.35.0.r322.gc54a32b
+pkgver=5.39.0.r338.g7638317
 pkgrel=1
 pkgdesc='Spelling framework for Qt5'
 arch=('i686' 'x86_64')

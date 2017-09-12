@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292982 2017-04-16 09:01:10Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kio-git
 _pkgname=kio
-pkgver=5.35.0.r2521.g28822060
+pkgver=5.39.0.r2621.gdd38578b
 pkgrel=1
 pkgdesc='Resource and network access abstraction'
 arch=('i686' 'x86_64')

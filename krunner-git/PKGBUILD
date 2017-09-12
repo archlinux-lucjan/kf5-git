@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293014 2017-04-16 09:02:30Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=krunner-git
 _pkgname=krunner
-pkgver=5.35.0.r250.gd1c0324
+pkgver=5.39.0.r273.g75e2d55
 pkgrel=1
 pkgdesc='Framework for providing different actions given a string query'
 arch=('i686' 'x86_64')

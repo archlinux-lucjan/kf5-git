@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# $Id: PKGBUILD 278167 2016-10-10 12:21:17Z arojas $
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=syntax-highlighting-git
 _pkgname=syntax-highlighting
-pkgver=5.35.0.r452.gc04f9b4
+pkgver=5.39.0.r546.g6ff9044
 pkgrel=1
 pkgdesc='Syntax highlighting engine for structured text and code'
 arch=(i686 x86_64)
@@ -18,7 +18,7 @@ groups=(kf5-git)
 source=("git://anongit.kde.org/$_pkgname.git"
         pkgbuild-syntax-highlight.patch)
 sha256sums=('SKIP'
-            '0de3f92677e41f299278d3a9adaa012822576248fd1c4e86f5dd25e2790a4d81')
+            '4321ee61f2465966f87dde89cf60e39b30de14e82b492d9a11a5c7e725b1ad8f')
 
 pkgver() {
   cd $_pkgname

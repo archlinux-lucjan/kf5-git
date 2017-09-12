@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292969 2017-04-16 09:00:43Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=attica-qt5-git
 _pkgname=attica
-pkgver=5.35.0.r603.g41e96f5
+pkgver=5.39.0.r614.g3250117
 pkgrel=1
 arch=('i686' 'x86_64')
 pkgdesc='Qt5 library that implements the Open Collaboration Services API'

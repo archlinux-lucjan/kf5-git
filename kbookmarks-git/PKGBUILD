@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292977 2017-04-16 09:00:59Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kbookmarks-git
 _pkgname=kbookmarks
-pkgver=5.35.0.r167.g51a2cf8
+pkgver=5.39.0.r181.ge8b3f18
 pkgrel=1
 pkgdesc='Support for bookmarks and the XBEL format'
 arch=('i686' 'x86_64')

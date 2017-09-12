@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292958 2017-04-16 09:00:21Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdoctools-git
 _pkgname=kdoctools
-pkgver=5.35.0.r362.ga54883c
+pkgver=5.39.0.r377.g8a060d3
 pkgrel=1
 pkgdesc='Documentation generation from docbook'
 arch=('i686' 'x86_64')

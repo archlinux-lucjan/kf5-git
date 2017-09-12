@@ -1,12 +1,11 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# $Id: PKGBUILD 293003 2017-04-16 09:01:56Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Antonio Rojas
 
 pkgname=breeze-icons-git
 _pkgname=breeze-icons
-pkgver=5.35.0.r1019.gab665636
+pkgver=5.39.0.r1040.g1a3aafad
 pkgrel=1
 pkgdesc='Breeze icon themes'
 arch=('any')
@@ -19,14 +18,15 @@ conflicts=('breeze-icons')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
-prepare() {
-  mkdir -p build
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
             
 prepare() {
   mkdir -p build
-  #sed -i 's/KF5_DEP_VERSION "5.34.0"/KF5_DEP_VERSION "5.33.0"/g' ~/Pracownia/Pozniej/kde/$pkgname/src/$_pkgname/CMakeLists.txt 
 }
 
 build() {

@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292998 2017-04-16 09:01:46Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kidletime-git
 _pkgname=kidletime
-pkgver=5.35.0.r134.gf33eff2
+pkgver=5.39.0.r149.g162a47a
 pkgrel=1
 pkgdesc='Monitoring user activity'
 arch=('i686' 'x86_64')

@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292962 2017-04-16 09:00:29Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kwidgetsaddons-git
 _pkgname=kwidgetsaddons
-pkgver=5.35.0.r354.g6778f27
+pkgver=5.39.0.r392.g63cf9b1
 pkgrel=1
 pkgdesc='Addons to QtWidgets'
 arch=('i686' 'x86_64')
@@ -26,7 +26,7 @@ pkgver() {
 }
    
 
-            
+             
 prepare() {
   mkdir -p build
 }

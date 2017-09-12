@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292959 2017-04-16 09:00:23Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kauth-git
 _pkgname=kauth
-pkgver=5.35.0.r199.g8a0a357
+pkgver=5.39.0.r216.gb6ca8ab
 pkgrel=1
 pkgdesc='Abstraction to system policy and authentication features'
 arch=('i686' 'x86_64')

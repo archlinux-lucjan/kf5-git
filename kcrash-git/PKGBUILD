@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292967 2017-04-16 09:00:39Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kcrash-git
 _pkgname=kcrash
-pkgver=5.35.0.r167.gbf29c99
+pkgver=5.39.0.r181.g0861a31
 pkgrel=1
 pkgdesc='Support for application crash analysis and bug report from apps'
 arch=('i686' 'x86_64')

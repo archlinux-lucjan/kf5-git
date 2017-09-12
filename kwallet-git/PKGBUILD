@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292981 2017-04-16 09:01:08Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kwallet-git
 _pkgname=kwallet
-pkgver=5.35.0.r790.g3466681
+pkgver=5.39.0.r813.ge301fc0
 pkgrel=1
 pkgdesc='Secure and unified container for user passwords'
 arch=('i686' 'x86_64')
@@ -24,6 +24,8 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
+   
+
             
 prepare() {
   mkdir -p build

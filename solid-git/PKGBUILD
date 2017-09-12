@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292978 2017-04-16 09:01:01Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=solid-git
 _pkgname=solid
-pkgver=5.35.0.r337.g5121ef4
+pkgver=5.39.0.r351.gd3a81ce
 pkgrel=1
 pkgdesc='Hardware integration and detection'
 arch=('i686' 'x86_64')

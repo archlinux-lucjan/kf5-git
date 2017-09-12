@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293019 2017-04-16 09:02:40Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=networkmanager-qt-git
 _pkgname=networkmanager-qt
-pkgver=5.35.0.r826.gb28d51d
+pkgver=5.39.0.r877.g55ccb32
 pkgrel=1
 pkgdesc='Qt wrapper for NetworkManager API'
 arch=('i686' 'x86_64')

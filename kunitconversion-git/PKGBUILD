@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292991 2017-04-16 09:01:30Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kunitconversion-git
 _pkgname=kunitconversion
-pkgver=5.35.0.r183.gfebc395
+pkgver=5.39.0.r196.g063ae6f
 pkgrel=1
 pkgdesc='Support for unit conversion'
 arch=('i686' 'x86_64')

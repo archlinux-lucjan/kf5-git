@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293007 2017-04-16 09:02:03Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdesu-git
 _pkgname=kdesu
-pkgver=5.35.0.r279.gfd01d89
+pkgver=5.39.0.r292.gbcaff3f
 pkgrel=1
 pkgdesc='Integration with su for elevated privileges'
 arch=('i686' 'x86_64')

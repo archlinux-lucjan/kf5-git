@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292997 2017-04-16 09:01:45Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kfilemetadata-git
 _pkgname=kfilemetadata
-pkgver=5.35.0.r343.g4829ff0
+pkgver=5.39.0.r362.g621101f
 pkgrel=1
 pkgdesc="A library for extracting file metadata"
 arch=('i686' 'x86_64')

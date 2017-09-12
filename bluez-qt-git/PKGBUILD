@@ -1,10 +1,9 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# $Id: PKGBUILD 293002 2017-04-16 09:01:55Z arojas $
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=bluez-qt-git
 _pkgname=bluez-qt
-pkgver=5.35.0.r448.gebcc2fb
+pkgver=5.39.0.r468.gf147651
 pkgrel=1
 pkgdesc='Qt wrapper for Bluez 5 DBus API'
 arch=(i686 x86_64)

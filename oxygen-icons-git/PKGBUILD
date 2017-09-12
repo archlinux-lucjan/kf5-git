@@ -1,11 +1,11 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293020 2017-04-16 09:02:42Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=oxygen-icons-git
 _pkgname=oxygen-icons5
-pkgver=5.35.0.r113.g1b641f8
+pkgver=5.39.0.r122.gefaa606
 pkgrel=1
 pkgdesc="The Oxygen Icon Theme"
 arch=('any')
@@ -14,6 +14,7 @@ license=('LGPL')
 makedepends=('extra-cmake-modules' 'qt5-base')
 provides=('oxygen-icons')
 conflicts=('oxygen-icons')
+groups=('kf5-git')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
@@ -37,8 +38,6 @@ build() {
 }
 
 package() {
-  groups=('kf5-git')
-
   cd build
   make DESTDIR="$pkgdir" install
 }

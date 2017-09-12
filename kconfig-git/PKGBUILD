@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292961 2017-04-16 09:00:27Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kconfig-git
 _pkgname=kconfig
-pkgver=5.35.0.r424.g7c7456d
+pkgver=5.39.0.r451.g34c2460
 pkgrel=1
 pkgdesc='Configuration system'
 arch=('i686' 'x86_64')

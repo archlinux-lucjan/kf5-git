@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292972 2017-04-16 09:00:49Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kitemviews-git
 _pkgname=kitemviews
-pkgver=5.35.0.r145.g323dcc2
+pkgver=5.39.0.r161.g7e1658c
 pkgrel=1
 pkgdesc='Widget addons for Qt Model/View'
 arch=('i686' 'x86_64')

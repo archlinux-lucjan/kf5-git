@@ -1,11 +1,9 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
-# Contributor: FadeMind <fademind@gmail.com>
+# Maintainer: FadeMind <fademind@gmail.com>
 # Contributor: Alexey D. <lq07829icatm@rambler.ru>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=extra-cmake-modules-git
-pkgver=5.35.0.r2883.gc61aee8
+pkgver=5.39.0.r2925.g6604694
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=('any')

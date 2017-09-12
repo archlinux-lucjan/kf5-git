@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292979 2017-04-16 09:01:03Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kjobwidgets-git
 _pkgname=kjobwidgets
-pkgver=5.35.0.r160.g5de7785
+pkgver=5.39.0.r176.g2f2492d
 pkgrel=1
 pkgdesc='Widgets for tracking KJob instances'
 arch=('i686' 'x86_64')

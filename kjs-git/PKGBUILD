@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292996 2017-04-16 09:01:43Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kjs-git
 _pkgname=kjs
-pkgver=5.35.0.r164.gff087d6
+pkgver=5.39.0.r173.gd7040e4
 pkgrel=1
 pkgdesc='Support for JS scripting in applications'
 arch=('i686' 'x86_64')
@@ -25,6 +25,7 @@ pkgver() {
 }
    
 
+            
 prepare() {
   mkdir -p build
 }

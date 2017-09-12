@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293000 2017-04-16 09:01:51Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=knewstuff-git
 _pkgname=knewstuff
-pkgver=5.35.0.r428.g04ed6a4
+pkgver=5.39.0.r462.gb95b72d
 pkgrel=1
 pkgdesc='Support for downloading application assets from the network'
 arch=('i686' 'x86_64')

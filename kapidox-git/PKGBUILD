@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292954 2017-04-16 09:00:12Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kapidox-git
 _pkgname=kapidox
-pkgver=5.35.0.r389.g394b017
+pkgver=5.39.0.r397.g16dfe9c
 pkgrel=1
 pkgdesc='Frameworks API Documentation Tools'
 arch=('any')

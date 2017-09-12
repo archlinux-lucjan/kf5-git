@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293009 2017-04-16 09:02:18Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kemoticons-git
 _pkgname=kemoticons
-pkgver=5.35.0.r176.g40578aa
+pkgver=5.39.0.r189.g8421bfa
 pkgrel=1
 pkgdesc='Support for emoticons and emoticons themes'
 arch=('i686' 'x86_64')

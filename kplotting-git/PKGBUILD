@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 292988 2017-04-16 09:01:23Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kplotting-git
 _pkgname=kplotting
-pkgver=5.35.0.r128.gfe3a5f8
+pkgver=5.39.0.r139.gea1ac35
 pkgrel=1
 pkgdesc='Lightweight plotting framework'
 arch=('i686' 'x86_64')

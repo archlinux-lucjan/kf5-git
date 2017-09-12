@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# $Id: PKGBUILD 293018 2017-04-16 09:02:38Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Mainrainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=modemmanager-qt-git
 _pkgname=modemmanager-qt
-pkgver=5.35.0.r346.g3644f8d
+pkgver=5.39.0.r356.gd4acdd4
 pkgrel=1
 pkgdesc='Qt wrapper for ModemManager DBus API'
 arch=(i686 x86_64)

@@ -1,10 +1,10 @@
-# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# $Id: PKGBUILD 293006 2017-04-16 09:02:02Z arojas $
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kded-git
 _pkgname=kded
-pkgver=5.35.0.r184.g25440a2
+pkgver=5.39.0.r195.g1485aa8
 pkgrel=1
 pkgdesc='Extensible deamon for providing system level services'
 arch=('i686' 'x86_64')
