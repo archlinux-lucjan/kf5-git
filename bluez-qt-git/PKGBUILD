@@ -1,5 +1,6 @@
-# $Id: PKGBUILD 293002 2017-04-16 09:01:55Z arojas $
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=bluez-qt-git
 _pkgname=bluez-qt

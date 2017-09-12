@@ -1,6 +1,7 @@
-# $Id: PKGBUILD 292978 2017-04-16 09:01:01Z arojas $
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=solid-git
 _pkgname=solid

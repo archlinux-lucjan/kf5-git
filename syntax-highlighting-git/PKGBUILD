@@ -1,6 +1,7 @@
-# $Id: PKGBUILD 278167 2016-10-10 12:21:17Z arojas $
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=syntax-highlighting-git
 _pkgname=syntax-highlighting

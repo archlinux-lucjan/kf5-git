@@ -1,7 +1,7 @@
-# $Id: PKGBUILD 293021 2017-04-16 09:02:43Z arojas $
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=prison-git
 _pkgname=prison

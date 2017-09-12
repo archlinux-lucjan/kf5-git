@@ -1,6 +1,6 @@
-# $Id: PKGBUILD 293013 2017-04-16 09:02:28Z arojas $
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kpeople-git
 _pkgname=kpeople

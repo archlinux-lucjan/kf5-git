@@ -1,6 +1,7 @@
-# Maintainer: FadeMind <fademind@gmail.com>
-# Contributor: Alexey D. <lq07829icatm@rambler.ru>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: FadeMind <fademind@gmail.com>
 
 pkgname=extra-cmake-modules-git
 pkgver=5.39.0.r2925.g6604694

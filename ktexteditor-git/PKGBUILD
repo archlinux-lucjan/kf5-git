@@ -1,5 +1,5 @@
-# $Id: PKGBUILD 294468 2017-04-24 12:01:41Z jgc $
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=ktexteditor-git

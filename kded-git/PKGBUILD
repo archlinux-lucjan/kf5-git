@@ -1,5 +1,5 @@
-# $Id: PKGBUILD 293006 2017-04-16 09:02:02Z arojas $
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kded-git
