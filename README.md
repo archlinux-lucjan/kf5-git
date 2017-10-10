@@ -9,6 +9,13 @@
 git clone https://github.com/sirlucjan/kf5-git.git
 
 ```
+or
+
+```
+git clone https://github.com/sirlucjan/kf5-git.git
+
+```
+
 # Install:
 
 ```
