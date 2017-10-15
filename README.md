@@ -93,6 +93,7 @@ makepkg -srci
 * krunner
 * prison
 * kirigami2
+* qqc2-desktop-style
 * kjs
 * kdelibs4support
 * khtml
