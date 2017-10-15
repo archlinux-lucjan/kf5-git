@@ -20,8 +20,6 @@ git clone https://gitlab.com/sirlucjan/kf5-git.git
 cd /some_path/kf5-git/package_name-git
 makepkg -srci
 
-```
-
 # Setting package order:
 
 * extra-cmake-modules
