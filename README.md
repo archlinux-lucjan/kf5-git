@@ -4,13 +4,13 @@
 # Download:
 
 ```
-git clone https://github.com/sirlucjan/kf5-git.git
+git clone https://github.com/archlinux-lucjan/kf5-git.git
 
 ```
 or
 
 ```
-git clone https://gitlab.com/sirlucjan/kf5-git.git
+git clone https://gitlab.com/archlinux-lucjan/kf5-git.git
 
 ```
 
