@@ -1,0 +1,44 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=qqc2-desktop-style-git
+_pkgname=qqc2-desktop-style
+pkgver=5.39.0.r74.ga0e2a13
+pkgrel=1
+pkgdesc='A style for Qt Quick Controls 2 to make it follow your desktop theme'
+arch=(i686 x86_64)
+url='https://community.kde.org/Frameworks'
+license=(LGPL)
+depends=(kirigami2 kiconthemes)
+makedepends=(extra-cmake-modules)
+groups=('kf5-git')
+provides=('qqc2-desktop-style')
+conflicts=('qqc2-desktop-style')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../$_pkgname \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

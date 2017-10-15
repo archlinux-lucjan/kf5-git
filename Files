@@ -143,6 +143,8 @@
 │   └── PKGBUILD
 ├── prison-git
 │   └── PKGBUILD
+├── qqc2-desktop-style-git
+│   └── PKGBUILD
 ├── solid-git
 │   └── PKGBUILD
 ├── sonnet-git
@@ -153,4 +155,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-75 directories, 78 files
+76 directories, 79 files
