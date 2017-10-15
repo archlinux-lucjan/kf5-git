@@ -12,7 +12,7 @@ arch=(i686 x86_64)
 url='https://community.kde.org/Frameworks'
 license=(GPL2)
 depends=(qt5-base)
-makedepends=(extra-cmake-modules qt5-xmlpatterns qt5-tools)
+makedepends=(extra-cmake-modules qt5-xmlpatterns qt5-tools doxygen)
 provides=('syntax-highlighting')
 conflicts=('syntax-highlighting')
 groups=(kf5-git)
@@ -41,7 +41,9 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_LIBDIR=lib
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 

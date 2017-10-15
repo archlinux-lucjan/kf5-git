@@ -10,7 +10,9 @@
 ├── breeze-icons-git
 │   └── PKGBUILD
 ├── extra-cmake-modules-git
-│   └── PKGBUILD
+│   ├── ECM-no-init.py.patch
+│   ├── PKGBUILD
+│   └── fix-python-bindings-generation.patch
 ├── frameworkintegration-git
 │   └── PKGBUILD
 ├── kactivities-git
@@ -46,7 +48,8 @@
 ├── kded-git
 │   └── PKGBUILD
 ├── kdelibs4support-git
-│   └── PKGBUILD
+│   ├── PKGBUILD
+│   └── kdelibs4support-openssl-1.1.patch
 ├── kdesignerplugin-git
 │   └── PKGBUILD
 ├── kdesu-git
@@ -155,4 +158,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-76 directories, 79 files
+76 directories, 82 files

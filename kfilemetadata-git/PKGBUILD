@@ -12,7 +12,7 @@ url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('ki18n' 'karchive' 'exiv2' 'poppler-qt5' 'taglib' 'ffmpeg' 'ebook-tools')
 optdepends=('catdoc: Extract text from office 98 files')
-makedepends=('extra-cmake-modules' 'catdoc' 'python')
+makedepends=('extra-cmake-modules' 'catdoc' 'python' 'doxygen' 'qt5-tools')
 provides=('kfilemetadata')
 conflicts=('kfilemetadata')
 groups=('kf5-git')
@@ -35,7 +35,9 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib
+    -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 

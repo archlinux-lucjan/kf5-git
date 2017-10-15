@@ -15,8 +15,10 @@ makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools' 'networkmanager' 'per
 provides=('kdelibs4support')
 conflicts=('kdelibs4support')
 groups=('kf5-aids-git')
-source=("git://anongit.kde.org/$_pkgname.git")
-sha256sums=('SKIP')
+source=("git://anongit.kde.org/$_pkgname.git"
+ kdelibs4support-openssl-1.1.patch)
+sha256sums=('SKIP'
+            'e33de96fae2b93c3fa06b4219205ae188b214be8c5e84b8d0426217fd65a5d48')
 
 pkgver() {
   cd $_pkgname
@@ -26,6 +28,8 @@ pkgver() {
            
 prepare() {
   mkdir -p build
+  cd $_pkgname
+  patch -p1 -i ../kdelibs4support-openssl-1.1.patch # Fix build with openssl 1.1
 }
 
 build() {
@@ -35,8 +39,7 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
     -DKDE_INSTALL_LIBEXECDIR=lib \
-    -DBUILD_TESTING=OFF \
-    -DOPENSSL_INCLUDE_DIR=/usr/include/openssl-1.0 -DOPENSSL_SSL_LIBRARY=/usr/lib/openssl-1.0/libssl.so -DOPENSSL_CRYPTO_LIBRARY=/usr/lib/openssl-1.0/libcrypto.so
+    -DBUILD_TESTING=OFF
   make
 }
 

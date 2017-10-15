@@ -11,8 +11,8 @@ arch=('i686' 'x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kauth' 'kcodecs' 'kconfig' 'kguiaddons' 'ki18n' 'kwidgetsaddons')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python' 'mesa' 'clang' 'python-pyqt5' 'python2-pyqt5')
-optdepends=('python-pykf5-git: to use the Python 3 bindings' 'python2-pykf5-git: to use the Python 2 bindings')
+makedepends=('extra-cmake-modules' 'kdoctools' 'python' 'mesa' 'clang' 'python-pyqt5' 'python2-pyqt5' 'doxygen' 'qt5-tools')
+optdepends=('python-pykf5: to use the Python 3 bindings' 'python2-pykf5: to use the Python 2 bindings')
 provides=('kconfigwidgets')
 conflicts=('kconfigwidgets')
 groups=('kf5-git')
@@ -36,7 +36,8 @@ build() {
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 

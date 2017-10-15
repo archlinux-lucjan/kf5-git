@@ -11,7 +11,7 @@ arch=('i686' 'x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kcoreaddons' 'ki18n' 'libutempter')
-makedepends=('extra-cmake-modules' 'python')
+makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
 provides=('kpty')
 conflicts=('kpty')
 groups=('kf5-git')
@@ -36,7 +36,8 @@ build() {
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 

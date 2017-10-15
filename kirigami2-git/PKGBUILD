@@ -9,7 +9,7 @@ pkgdesc='A QtQuick based components set'
 arch=(i686 x86_64)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
-depends=(qt5-quickcontrols2)
+depends=(qt5-quickcontrols2 qt5-graphicaleffects)
 makedepends=(extra-cmake-modules qt5-tools plasma-framework)
 provides=('kirigami2')
 conflicts=('kirigami2')
@@ -33,9 +33,10 @@ build() {
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DKDE_INSTALL_LIBDIR=lib \
+    -DBUILD_EXAMPLES=ON \
     -DBUILD_TESTING=OFF
   make
-} 
+}
 
 package() {
   cd build

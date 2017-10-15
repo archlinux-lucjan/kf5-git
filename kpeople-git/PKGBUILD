@@ -11,7 +11,7 @@ arch=(i686 x86_64)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
 depends=(kservice kwidgetsaddons kitemviews qt5-declarative)
-makedepends=(extra-cmake-modules python mesa)
+makedepends=(extra-cmake-modules python mesa doxygen qt5-tools)
 provides=('kpeople')
 conflicts=('kpeople')
 groups=(kf5-git)
@@ -35,7 +35,8 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=Release \
     -DKDE_INSTALL_LIBDIR=lib \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 

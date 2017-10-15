@@ -12,7 +12,7 @@ arch=('i686' 'x86_64')
 url="https://projects.kde.org/projects/kde/pim/kxmlrpcclient"
 license=('LGPL')
 depends=('kio')
-makedepends=('extra-cmake-modules' 'python')
+makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
 provides=('kxmlrpcclient')
 conflicts=('kxmlrpcclient')
 groups=('kf5-git')
@@ -37,7 +37,8 @@ build() {
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 
