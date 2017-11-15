@@ -5,7 +5,6 @@ pkgbase = kitemviews-git
 	pkgver = 5.39.0.r161.g7e1658c
 	pkgrel = 1
 	url = https://community.kde.org/Frameworks
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL

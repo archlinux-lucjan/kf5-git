@@ -5,7 +5,6 @@ pkgbase = kirigami2-git
 	pkgver = 5.39.0.r1125.g1bd8ff8
 	pkgrel = 1
 	url = https://community.kde.org/Frameworks
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL

@@ -5,7 +5,6 @@ pkgbase = kwindowsystem-git
 	pkgver = 5.39.0.r337.g5541683
 	pkgrel = 1
 	url = https://community.kde.org/Frameworks
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL

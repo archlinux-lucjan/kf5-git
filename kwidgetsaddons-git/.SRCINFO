@@ -5,7 +5,6 @@ pkgbase = kwidgetsaddons-git
 	pkgver = 5.39.0.r392.g63cf9b1
 	pkgrel = 1
 	url = https://community.kde.org/Frameworks
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL

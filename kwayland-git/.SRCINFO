@@ -5,7 +5,6 @@ pkgbase = kwayland-git
 	pkgver = 5.39.0.r739.ga4e03fc
 	pkgrel = 1
 	url = https://www.kde.org
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL

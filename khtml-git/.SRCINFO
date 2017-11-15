@@ -5,7 +5,6 @@ pkgbase = khtml-git
 	pkgver = 5.39.0.r374.gdfcbfbd
 	pkgrel = 1
 	url = https://community.kde.org/Frameworks
-	arch = i686
 	arch = x86_64
 	groups = kf5-aids-git
 	license = LGPL

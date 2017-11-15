@@ -5,7 +5,6 @@ pkgbase = kcrash-git
 	pkgver = 5.39.0.r181.g0861a31
 	pkgrel = 1
 	url = https://community.kde.org/Frameworks
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL

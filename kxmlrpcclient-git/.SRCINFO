@@ -5,7 +5,6 @@ pkgbase = kxmlrpcclient-git
 	pkgver = 5.39.0.r301.gb9361e942
 	pkgrel = 1
 	url = https://projects.kde.org/projects/kde/pim/kxmlrpcclient
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL
