@@ -5,7 +5,7 @@
 
 pkgname=syntax-highlighting-git
 _pkgname=syntax-highlighting
-pkgver=5.39.0.r546.g6ff9044
+pkgver=5.42.0.r596.g3e50535
 pkgrel=1
 pkgdesc='Syntax highlighting engine for structured text and code'
 arch=(x86_64)
@@ -16,10 +16,8 @@ makedepends=(extra-cmake-modules qt5-xmlpatterns qt5-tools doxygen)
 provides=('syntax-highlighting')
 conflicts=('syntax-highlighting')
 groups=(kf5-git)
-source=("git://anongit.kde.org/$_pkgname.git"
-        pkgbuild-syntax-highlight.patch)
-sha256sums=('SKIP'
-            '4321ee61f2465966f87dde89cf60e39b30de14e82b492d9a11a5c7e725b1ad8f')
+source=("git://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
@@ -30,9 +28,6 @@ pkgver() {
             
 prepare() {
   mkdir -p build
-  # Add PKGBUILD syntax highlighting
-  cd $_pkgname
-  patch -p1 -i ../pkgbuild-syntax-highlight.patch
 }
 
 

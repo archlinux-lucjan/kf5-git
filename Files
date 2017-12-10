@@ -153,9 +153,8 @@
 ├── sonnet-git
 │   └── PKGBUILD
 ├── syntax-highlighting-git
-│   ├── PKGBUILD
-│   └── pkgbuild-syntax-highlight.patch
+│   └── PKGBUILD
 └── threadweaver-git
     └── PKGBUILD
 
-76 directories, 82 files
+76 directories, 81 files
