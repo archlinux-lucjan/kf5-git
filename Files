@@ -1,6 +1,4 @@
 .
-├── Files
-├── README.md
 ├── attica-qt5-git
 │   └── PKGBUILD
 ├── baloo-git
@@ -11,8 +9,9 @@
 │   └── PKGBUILD
 ├── extra-cmake-modules-git
 │   ├── ECM-no-init.py.patch
-│   ├── PKGBUILD
-│   └── fix-python-bindings-generation.patch
+│   ├── fix-python-bindings-generation.patch
+│   └── PKGBUILD
+├── Files
 ├── frameworkintegration-git
 │   └── PKGBUILD
 ├── kactivities-git
@@ -48,8 +47,8 @@
 ├── kded-git
 │   └── PKGBUILD
 ├── kdelibs4support-git
-│   ├── PKGBUILD
-│   └── kdelibs4support-openssl-1.1.patch
+│   ├── kdelibs4support-openssl-1.1.patch
+│   └── PKGBUILD
 ├── kdesignerplugin-git
 │   └── PKGBUILD
 ├── kdesu-git
@@ -90,9 +89,9 @@
 │   └── PKGBUILD
 ├── kjobwidgets-git
 │   └── PKGBUILD
-├── kjs-git
-│   └── PKGBUILD
 ├── kjsembed-git
+│   └── PKGBUILD
+├── kjs-git
 │   └── PKGBUILD
 ├── kmediaplayer-git
 │   └── PKGBUILD
@@ -148,6 +147,7 @@
 │   └── PKGBUILD
 ├── qqc2-desktop-style-git
 │   └── PKGBUILD
+├── README.md
 ├── solid-git
 │   └── PKGBUILD
 ├── sonnet-git

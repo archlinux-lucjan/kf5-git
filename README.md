@@ -80,6 +80,7 @@ makepkg -srci
 * ktexteditor
 * kdesignerplugin
 * kwayland
+* kirigami2
 * plasma-framework
 * modemmanager-qt
 * kpeople
@@ -92,7 +93,6 @@ makepkg -srci
 * kactivities-stats
 * krunner
 * prison
-* kirigami2
 * qqc2-desktop-style
 * kjs
 * kdelibs4support
