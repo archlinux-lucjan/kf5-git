@@ -5,7 +5,6 @@ pkgbase = kio-git
 	pkgver = 5.42.0.r2756.g6b9c4feb
 	pkgrel = 1
 	url = https://community.kde.org/Frameworks
-	arch = i686
 	arch = x86_64
 	groups = kf5-git
 	license = LGPL
