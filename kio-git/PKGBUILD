@@ -4,10 +4,10 @@
 
 pkgname=kio-git
 _pkgname=kio
-pkgver=5.39.0.r2621.gdd38578b
+pkgver=5.42.0.r2756.g6b9c4feb
 pkgrel=1
 pkgdesc='Resource and network access abstraction'
-arch=('x86_64')
+arch=('i686' 'x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('solid' 'kjobwidgets' 'kbookmarks' 'libxslt' 'kwallet' 'desktop-file-utils')
@@ -36,8 +36,8 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
-    -DKDE_INSTALL_LIBEXECDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make
