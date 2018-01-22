@@ -4,7 +4,7 @@
 
 pkgname=kdewebkit-git
 _pkgname=kdewebkit
-pkgver=5.39.0.r136.ge6dba1d
+pkgver=5.43.0.r146.gd198b28
 pkgrel=1
 pkgdesc='KDE Integration for QtWebKit'
 arch=('x86_64')
@@ -33,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

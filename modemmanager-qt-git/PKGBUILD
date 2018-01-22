@@ -5,7 +5,7 @@
 
 pkgname=modemmanager-qt-git
 _pkgname=modemmanager-qt
-pkgver=5.39.0.r356.gd4acdd4
+pkgver=5.43.0.r369.g56577ab
 pkgrel=1
 pkgdesc='Qt wrapper for ModemManager DBus API'
 arch=(x86_64)
@@ -25,7 +25,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }
@@ -35,7 +34,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

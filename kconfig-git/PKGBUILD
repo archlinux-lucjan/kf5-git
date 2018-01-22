@@ -4,7 +4,7 @@
 
 pkgname=kconfig-git
 _pkgname=kconfig
-pkgver=5.39.0.r451.g34c2460
+pkgver=5.43.0.r475.gdc25677
 pkgrel=1
 pkgdesc='Configuration system'
 arch=('x86_64')
@@ -25,7 +25,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }
@@ -35,8 +34,8 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
-    -DKDE_INSTALL_LIBEXECDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

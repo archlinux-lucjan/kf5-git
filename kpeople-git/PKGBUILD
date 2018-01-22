@@ -4,7 +4,7 @@
 
 pkgname=kpeople-git
 _pkgname=kpeople
-pkgver=5.39.0.r1104.g57b1892
+pkgver=5.43.0.r1115.ga9377ad
 pkgrel=1
 pkgdesc='A library that provides access to all contacts and the people who hold them'
 arch=(x86_64)
@@ -24,7 +24,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }
@@ -34,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=Release \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

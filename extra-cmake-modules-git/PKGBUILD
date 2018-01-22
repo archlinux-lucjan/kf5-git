@@ -5,7 +5,7 @@
 
 pkgname=extra-cmake-modules-git
 _pkgname=extra-cmake-modules
-pkgver=5.39.0.r2925.g6604694
+pkgver=5.43.0.r2945.g78443e0
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=('any')

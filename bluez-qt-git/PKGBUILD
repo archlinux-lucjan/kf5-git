@@ -4,7 +4,7 @@
 
 pkgname=bluez-qt-git
 _pkgname=bluez-qt
-pkgver=5.39.0.r468.gf147651
+pkgver=5.43.0.r479.g526037f
 pkgrel=1
 pkgdesc='Qt wrapper for Bluez 5 DBus API'
 arch=(x86_64)
@@ -24,7 +24,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }

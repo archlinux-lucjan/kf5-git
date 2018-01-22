@@ -4,7 +4,7 @@
 
 pkgname=breeze-icons-git
 _pkgname=breeze-icons
-pkgver=5.39.0.r1040.g1a3aafad
+pkgver=5.43.0.r1084.gc86e0a29
 pkgrel=1
 pkgdesc='Breeze icon themes'
 arch=('any')
@@ -23,7 +23,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }

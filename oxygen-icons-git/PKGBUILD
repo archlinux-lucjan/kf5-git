@@ -6,7 +6,7 @@
 
 pkgname=oxygen-icons-git
 _pkgname=oxygen-icons5
-pkgver=5.39.0.r122.gefaa606
+pkgver=5.43.0.r132.g917c072
 pkgrel=1
 pkgdesc="The Oxygen Icon Theme"
 arch=('any')
@@ -25,7 +25,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }

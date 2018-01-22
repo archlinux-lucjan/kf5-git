@@ -47,7 +47,6 @@
 ├── kded-git
 │   └── PKGBUILD
 ├── kdelibs4support-git
-│   ├── kdelibs4support-openssl-1.1.patch
 │   └── PKGBUILD
 ├── kdesignerplugin-git
 │   └── PKGBUILD
@@ -157,4 +156,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-76 directories, 81 files
+76 directories, 80 files

@@ -4,7 +4,7 @@
 
 pkgname=kded-git
 _pkgname=kded
-pkgver=5.39.0.r195.g1485aa8
+pkgver=5.43.0.r211.g55e9a34
 pkgrel=1
 pkgdesc='Extensible deamon for providing system level services'
 arch=('x86_64')
@@ -33,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

@@ -3,7 +3,7 @@
 
 pkgname=kirigami2-git
 _pkgname=kirigami
-pkgver=5.39.0.r1125.g1bd8ff8
+pkgver=5.43.0.r1257.g3db732d
 pkgrel=1
 pkgdesc='A QtQuick based components set'
 arch=(x86_64)
@@ -32,7 +32,7 @@ build() {
     cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_EXAMPLES=ON \
     -DBUILD_TESTING=OFF
   make

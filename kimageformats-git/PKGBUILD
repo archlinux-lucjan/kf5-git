@@ -4,7 +4,7 @@
 
 pkgname=kimageformats-git
 _pkgname=kimageformats
-pkgver=5.38.0.r129.g78aeee7
+pkgver=5.42.0.r137.g64e719f
 pkgrel=1
 pkgdesc='Image format plugins for Qt5'
 arch=('x86_64')
@@ -21,11 +21,10 @@ sha256sums=('SKIP')
 
 pkgver() {
    cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m5 'find_package(ECM'| grep -o "[[:digit:]]*" | paste -sd'.')"
-  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+   _ver="$(cat CMakeLists.txt | grep -m5 'find_package(ECM'| grep -o "[[:digit:]]*" | paste -sd'.')"
+   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
-            
 prepare() {
   mkdir -p build
 }
@@ -35,7 +34,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

@@ -5,7 +5,7 @@
 
 pkgname=syntax-highlighting-git
 _pkgname=syntax-highlighting
-pkgver=5.42.0.r596.g3e50535
+pkgver=5.43.0.r613.g88ef854
 pkgrel=1
 pkgdesc='Syntax highlighting engine for structured text and code'
 arch=(x86_64)
@@ -25,11 +25,9 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }
-
 
 build() {
   cd build

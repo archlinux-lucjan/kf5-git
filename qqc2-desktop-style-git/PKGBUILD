@@ -3,7 +3,7 @@
 
 pkgname=qqc2-desktop-style-git
 _pkgname=qqc2-desktop-style
-pkgver=5.39.0.r74.ga0e2a13
+pkgver=5.43.0.r99.gef53444
 pkgrel=1
 pkgdesc='A style for Qt Quick Controls 2 to make it follow your desktop theme'
 arch=(x86_64)
@@ -16,7 +16,6 @@ provides=('qqc2-desktop-style')
 conflicts=('qqc2-desktop-style')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
-
 
 pkgver() {
   cd $_pkgname
@@ -33,7 +32,7 @@ build() {
   cmake ../$_pkgname \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

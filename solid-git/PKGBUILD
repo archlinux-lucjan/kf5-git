@@ -5,7 +5,7 @@
 
 pkgname=solid-git
 _pkgname=solid
-pkgver=5.39.0.r351.gd3a81ce
+pkgver=5.43.0.r367.g9d7a417
 pkgrel=1
 pkgdesc='Hardware integration and detection'
 arch=('x86_64')
@@ -34,7 +34,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

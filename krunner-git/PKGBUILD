@@ -4,7 +4,7 @@
 
 pkgname=krunner-git
 _pkgname=krunner
-pkgver=5.39.0.r273.g75e2d55
+pkgver=5.43.0.r291.g526f02a
 pkgrel=1
 pkgdesc='Framework for providing different actions given a string query'
 arch=('x86_64')
@@ -24,7 +24,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }
@@ -34,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

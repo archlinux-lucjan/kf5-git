@@ -4,7 +4,7 @@
 
 pkgname=kapidox-git
 _pkgname=kapidox
-pkgver=5.39.0.r397.g16dfe9c
+pkgver=5.43.0.r402.ga08fb03
 pkgrel=1
 pkgdesc='Frameworks API Documentation Tools'
 arch=('any')
@@ -24,7 +24,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }

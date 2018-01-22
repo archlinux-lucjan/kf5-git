@@ -4,7 +4,7 @@
 
 pkgname=knotifyconfig-git
 _pkgname=knotifyconfig
-pkgver=5.39.0.r176.g0a4387a
+pkgver=5.43.0.r187.g8d1f607
 pkgrel=1
 pkgdesc='Configuration system for KNotify'
 arch=('x86_64')
@@ -24,8 +24,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-
-            
 prepare() {
   mkdir -p build
 }
@@ -35,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

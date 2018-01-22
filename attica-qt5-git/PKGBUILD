@@ -4,7 +4,7 @@
 
 pkgname=attica-qt5-git
 _pkgname=attica
-pkgver=5.39.0.r614.g3250117
+pkgver=5.43.0.r626.g3e96ef3
 pkgrel=1
 arch=('x86_64')
 pkgdesc='Qt5 library that implements the Open Collaboration Services API'
@@ -34,7 +34,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

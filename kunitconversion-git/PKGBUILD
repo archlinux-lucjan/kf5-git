@@ -4,7 +4,7 @@
 
 pkgname=kunitconversion-git
 _pkgname=kunitconversion
-pkgver=5.39.0.r196.g063ae6f
+pkgver=5.43.0.r209.g286a033
 pkgrel=1
 pkgdesc='Support for unit conversion'
 arch=('x86_64')
@@ -24,7 +24,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }
@@ -34,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

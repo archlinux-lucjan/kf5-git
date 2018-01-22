@@ -4,7 +4,7 @@
 
 pkgname=kcodecs-git
 _pkgname=kcodecs
-pkgver=5.39.0.r183.g2e78450
+pkgver=5.43.0.r195.g2352bc5
 pkgrel=1
 pkgdesc='Provide a collection of methods to manipulate strings using various encodings'
 arch=('x86_64')
@@ -34,7 +34,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

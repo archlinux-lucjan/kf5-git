@@ -4,7 +4,7 @@
 
 pkgname=ktextwidgets-git
 _pkgname=ktextwidgets
-pkgver=5.39.0.r184.gb421be0
+pkgver=5.43.0.r199.gd2b64d3
 pkgrel=1
 pkgdesc='Advanced text editing widgets'
 arch=('x86_64')
@@ -24,7 +24,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }
@@ -34,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

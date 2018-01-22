@@ -4,7 +4,7 @@
 
 pkgname=kio-git
 _pkgname=kio
-pkgver=5.42.0.r2756.g6b9c4feb
+pkgver=5.43.0.r2773.g5009c913
 pkgrel=1
 pkgdesc='Resource and network access abstraction'
 arch=('x86_64')
@@ -26,7 +26,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-            
 prepare() {
   mkdir -p build
 }

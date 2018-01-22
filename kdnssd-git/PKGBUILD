@@ -4,7 +4,7 @@
 
 pkgname=kdnssd-git
 _pkgname=kdnssd
-pkgver=5.39.0.r153.gc684233
+pkgver=5.43.0.r168.g94744c7
 pkgrel=1
 pkgdesc='Abstraction to system DNSSD features'
 arch=('x86_64')
@@ -33,7 +33,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

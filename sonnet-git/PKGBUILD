@@ -5,7 +5,7 @@
 
 pkgname=sonnet-git
 _pkgname=sonnet
-pkgver=5.39.0.r338.g7638317
+pkgver=5.43.0.r376.g9038a8e
 pkgrel=1
 pkgdesc='Spelling framework for Qt5'
 arch=('x86_64')
@@ -27,8 +27,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-
-            
 prepare() {
   mkdir -p build
 }
@@ -38,7 +36,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

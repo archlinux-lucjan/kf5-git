@@ -5,7 +5,7 @@
 
 pkgname=kwayland-git
 _pkgname=kwayland
-pkgver=5.39.0.r739.ga4e03fc
+pkgver=5.43.0.r781.g07935f7
 pkgrel=1
 pkgdesc='Qt-style Client and Server library wrapper for the Wayland libraries'
 arch=('x86_64')
@@ -25,8 +25,6 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-
-            
 prepare() {
   mkdir -p build
 }
@@ -36,8 +34,8 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
-    -DKDE_INSTALL_LIBEXECDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

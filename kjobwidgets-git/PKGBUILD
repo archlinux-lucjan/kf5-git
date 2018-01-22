@@ -4,7 +4,7 @@
 
 pkgname=kjobwidgets-git
 _pkgname=kjobwidgets
-pkgver=5.39.0.r176.g2f2492d
+pkgver=5.43.0.r189.g240a9c1
 pkgrel=1
 pkgdesc='Widgets for tracking KJob instances'
 arch=('x86_64')
@@ -34,7 +34,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

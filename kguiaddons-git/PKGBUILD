@@ -4,7 +4,7 @@
 
 pkgname=kguiaddons-git
 _pkgname=kguiaddons
-pkgver=5.39.0.r161.g126d4dc
+pkgver=5.43.0.r172.g37f5ffa
 pkgrel=1
 pkgdesc='Addons to QtGui'
 arch=('x86_64')
@@ -24,7 +24,6 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
 
 prepare() {
   mkdir -p build
@@ -35,7 +34,7 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

@@ -4,7 +4,7 @@
 
 pkgname=frameworkintegration-git
 _pkgname=frameworkintegration
-pkgver=5.39.0.r373.ge52c7c2
+pkgver=5.43.0.r389.g0d5299e
 pkgrel=1
 pkgdesc='Framework providing components to allow applications to integrate with a KDE Workspace'
 arch=('x86_64')
@@ -34,8 +34,8 @@ build() {
   cmake ../${_pkgname} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DKDE_INSTALL_LIBDIR=lib \
-    -DKDE_INSTALL_LIBEXECDIR=lib \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }
