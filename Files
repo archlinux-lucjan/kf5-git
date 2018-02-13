@@ -1,5 +1,5 @@
 .
-├── attica-qt5-git
+├── attica-git
 │   └── PKGBUILD
 ├── baloo-git
 │   └── PKGBUILD
@@ -65,6 +65,8 @@
 ├── kglobalaccel-git
 │   └── PKGBUILD
 ├── kguiaddons-git
+│   └── PKGBUILD
+├── kholidays-git
 │   └── PKGBUILD
 ├── khtml-git
 │   └── PKGBUILD
@@ -144,6 +146,8 @@
 │   └── PKGBUILD
 ├── prison-git
 │   └── PKGBUILD
+├── purpose-git
+│   └── PKGBUILD
 ├── qqc2-desktop-style-git
 │   └── PKGBUILD
 ├── README.md
@@ -156,4 +160,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-76 directories, 80 files
+78 directories, 82 files

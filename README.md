@@ -100,3 +100,5 @@ makepkg -srci
 * kjsembed
 * kmediaplayer
 * kross
+* purpose
+* kholidays

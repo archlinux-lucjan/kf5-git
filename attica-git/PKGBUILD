@@ -2,9 +2,9 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
-pkgname=attica-qt5-git
+pkgname=attica-git
 _pkgname=attica
-pkgver=5.43.0.r626.g3e96ef3
+pkgver=5.43.0.r627.g8207c16
 pkgrel=1
 arch=('x86_64')
 pkgdesc='Qt5 library that implements the Open Collaboration Services API'
