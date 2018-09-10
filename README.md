@@ -94,6 +94,7 @@ makepkg -srci
 * krunner
 * prison
 * qqc2-desktop-style
+* syndication
 * kjs
 * kdelibs4support
 * khtml

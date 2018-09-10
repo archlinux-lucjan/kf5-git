@@ -155,9 +155,11 @@
 │   └── PKGBUILD
 ├── sonnet-git
 │   └── PKGBUILD
+├── syndication-git
+│   └── PKGBUILD
 ├── syntax-highlighting-git
 │   └── PKGBUILD
 └── threadweaver-git
     └── PKGBUILD
 
-78 directories, 82 files
+79 directories, 83 files
