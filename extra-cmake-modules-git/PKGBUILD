@@ -5,7 +5,7 @@
 
 pkgname=extra-cmake-modules-git
 _pkgname=extra-cmake-modules
-pkgver=5.43.0.r2945.g78443e0
+pkgver=5.63.0.r3094.g3b0bf71
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=('any')
@@ -16,9 +16,8 @@ makedepends=('python-sphinx' 'python-requests' 'qt5-tools')
 conflicts=('extra-cmake-modules')
 provides=('extra-cmake-modules')
 source=('git://anongit.kde.org/extra-cmake-modules.git'
-fix-python-bindings-generation.patch ECM-no-init.py.patch)
+        'ECM-no-init.py.patch')
 sha1sums=('SKIP'
-          'f5a4f82e1f82382ddcd09d49bac73ed12ed8aec6'
           '7ca60747096c1816302edf5b21a9bb3bea55995b')
 
 pkgver() {
@@ -31,9 +30,7 @@ prepare() {
   mkdir -p build
   cd $_pkgname
   sed -e 's|/usr/bin/env python|/usr/bin/env python2|' -i find-modules/*.py
-# Fix Ubuntu-specific code https://bugs.kde.org/show_bug.cgi?id=372311
-  patch -p1 -i ../fix-python-bindings-generation.patch
-# Don't create __init__.py, depend on python-pykf5 instead
+# Don't create __init__.py
   patch -p1 -i ../ECM-no-init.py.patch
 }
 
@@ -41,7 +38,6 @@ build() {
   cd build
   cmake ../extra-cmake-modules \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=Release \
     -DBUILD_HTML_DOCS=OFF \
     -DBUILD_QTHELP_DOCS=ON \
     -DBUILD_TESTING=OFF

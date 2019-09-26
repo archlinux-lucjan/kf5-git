@@ -9,7 +9,6 @@
 │   └── PKGBUILD
 ├── extra-cmake-modules-git
 │   ├── ECM-no-init.py.patch
-│   ├── fix-python-bindings-generation.patch
 │   └── PKGBUILD
 ├── Files
 ├── frameworkintegration-git
@@ -162,4 +161,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-79 directories, 83 files
+79 directories, 82 files
