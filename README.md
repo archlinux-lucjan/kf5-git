@@ -103,3 +103,5 @@ makepkg -srci
 * kross
 * purpose
 * kholidays
+* kcalendarcore
+* kcontacts 
