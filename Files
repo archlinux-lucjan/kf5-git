@@ -25,6 +25,8 @@
 │   └── PKGBUILD
 ├── kbookmarks-git
 │   └── PKGBUILD
+├── kcalendarcore-git
+│   └── PKGBUILD
 ├── kcmutils-git
 │   └── PKGBUILD
 ├── kcodecs-git
@@ -161,4 +163,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-79 directories, 82 files
+80 directories, 83 files
