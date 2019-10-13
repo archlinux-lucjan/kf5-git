@@ -37,6 +37,8 @@
 │   └── PKGBUILD
 ├── kconfigwidgets-git
 │   └── PKGBUILD
+├── kcontacts-git
+│   └── PKGBUILD
 ├── kcoreaddons-git
 │   └── PKGBUILD
 ├── kcrash-git
@@ -163,4 +165,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-80 directories, 83 files
+81 directories, 84 files
