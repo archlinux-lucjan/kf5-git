@@ -4,15 +4,15 @@
 
 pkgname=kwidgetsaddons-git
 _pkgname=kwidgetsaddons
-pkgver=5.43.0.r425.g01305e1
+pkgver=5.64.0.r601.gb935a73
 pkgrel=1
 pkgdesc='Addons to QtWidgets'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'clang' 'python2-pyqt5' 'python-pyqt5' 'doxygen')
-optdepends=('python-pykf5: to use the Python 3 bindings' 'python2-pykf5: to use the Python 2 bindings')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'clang' 'python-pyqt5' 'doxygen' 'sip' 'git')
+optdepends=('python-pyqt5: for the Python bindings')
 provides=('kwidgetsaddons')
 conflicts=('kwidgetsaddons')
 groups=('kf5-git')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

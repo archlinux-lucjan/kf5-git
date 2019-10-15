@@ -5,17 +5,17 @@
 
 pkgname=syntax-highlighting-git
 _pkgname=syntax-highlighting
-pkgver=5.43.0.r613.g88ef854
+pkgver=5.64.0.r1030.g1371441
 pkgrel=1
 pkgdesc='Syntax highlighting engine for structured text and code'
-arch=(x86_64)
+arch=('x86_64')
 url='https://community.kde.org/Frameworks'
-license=(GPL2)
-depends=(qt5-base)
-makedepends=(extra-cmake-modules qt5-xmlpatterns qt5-tools doxygen)
+license=('GPL2')
+depends=('qt5-base')
+makedepends=('extra-cmake-modules' 'qt5-xmlpatterns' 'qt5-tools' 'qt5-doc' 'doxygen' 'git')
 provides=('syntax-highlighting')
 conflicts=('syntax-highlighting')
-groups=(kf5-git)
+groups=('kf5-git')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
@@ -32,10 +32,8 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
+    -DQRC_SYNTAX=OFF \
     -DBUILD_QCH=ON
   make
 }

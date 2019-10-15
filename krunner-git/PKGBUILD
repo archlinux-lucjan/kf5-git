@@ -4,7 +4,7 @@
 
 pkgname=krunner-git
 _pkgname=krunner
-pkgver=5.43.0.r291.g526f02a
+pkgver=5.64.0.r383.gb723ac3
 pkgrel=1
 pkgdesc='Framework for providing different actions given a string query'
 arch=('x86_64')
@@ -12,7 +12,7 @@ url='https://community.kde.org/Frameworks'
 license=('LGPL')
 groups=('kf5-git')
 depends=('plasma-framework' 'threadweaver')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'kdoctools' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('krunner')
 conflicts=('krunner')
 source=("git://anongit.kde.org/$_pkgname.git")
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

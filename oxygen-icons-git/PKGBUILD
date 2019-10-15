@@ -6,13 +6,13 @@
 
 pkgname=oxygen-icons-git
 _pkgname=oxygen-icons5
-pkgver=5.43.0.r132.g917c072
+pkgver=5.64.0.r201.ga97eb9f
 pkgrel=1
 pkgdesc="The Oxygen Icon Theme"
 arch=('any')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-makedepends=('extra-cmake-modules' 'qt5-base')
+makedepends=('extra-cmake-modules' 'qt5-base' 'git')
 provides=('oxygen-icons')
 conflicts=('oxygen-icons')
 groups=('kf5-git')
@@ -31,9 +31,7 @@ prepare() {
 
 build() {
   cd build
-  cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr
+  cmake ../${_pkgname}
   make
 }
 

@@ -4,14 +4,14 @@
 
 pkgname=kded-git
 _pkgname=kded
-pkgver=5.43.0.r211.g55e9a34
+pkgver=5.64.0.r278.ge0f50e3
 pkgrel=1
 pkgdesc='Extensible deamon for providing system level services'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kinit')
-makedepends=('extra-cmake-modules' 'kdoctools')
+makedepends=('extra-cmake-modules' 'kdoctools' 'git')
 provides=('kded')
 conflicts=('kded')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

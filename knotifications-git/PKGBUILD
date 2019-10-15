@@ -4,14 +4,14 @@
 
 pkgname=knotifications-git
 _pkgname=knotifications
-pkgver=5.43.0.r334.g9a9b7fd
+pkgver=5.64.0.r467.gb658344
 pkgrel=1
 pkgdesc='Abstraction for system notifications'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('phonon-qt5' 'libdbusmenu-qt5' 'kwindowsystem' 'kconfig' 'kcodecs' 'kcoreaddons' 'qt5-speech')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'python' 'doxygen')
+depends=('libcanberra' 'libdbusmenu-qt5' 'kwindowsystem' 'kconfig' 'kcodecs' 'kcoreaddons' 'qt5-speech')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'doxygen' 'git')
 provides=('knotifications')
 conflicts=('knotifications')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

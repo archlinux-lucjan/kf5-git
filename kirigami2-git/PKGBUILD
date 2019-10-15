@@ -3,14 +3,14 @@
 
 pkgname=kirigami2-git
 _pkgname=kirigami
-pkgver=5.43.0.r1257.g3db732d
+pkgver=5.64.0.r1951.g06e5e678
 pkgrel=1
 pkgdesc='A QtQuick based components set'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
-depends=(qt5-quickcontrols2 qt5-graphicaleffects)
-makedepends=(extra-cmake-modules qt5-tools plasma-framework)
+depends=('qt5-quickcontrols' 'qt5-quickcontrols2' 'qt5-graphicaleffects')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'qt5-svg' 'kpackage' 'doxygen' 'git')
 provides=('kirigami2')
 conflicts=('kirigami2')
 groups=('kf5-git')
@@ -30,11 +30,8 @@ pkgver() {
 build() {
   cd build
     cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DBUILD_EXAMPLES=ON \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 

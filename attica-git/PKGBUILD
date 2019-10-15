@@ -4,17 +4,17 @@
 
 pkgname=attica-git
 _pkgname=attica
-pkgver=5.43.0.r627.g8207c16
+pkgver=5.64.0.r716.g799224f
 pkgrel=1
 arch=('x86_64')
 pkgdesc='Qt5 library that implements the Open Collaboration Services API'
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 groups=('kf5-git')
-provides=('attica-qt5' 'attica')
-conflicts=('attica-qt5' 'attica')
+provides=('attica')
+conflicts=('attica')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

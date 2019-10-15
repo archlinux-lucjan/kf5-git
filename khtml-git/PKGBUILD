@@ -4,14 +4,14 @@
 
 pkgname=khtml-git
 _pkgname=khtml
-pkgver=5.43.0.r389.g00eb747
+pkgver=5.64.0.r469.g341f045
 pkgrel=1
 pkgdesc='KHTML APIs'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('giflib' 'kparts' 'kjs')
-makedepends=('extra-cmake-modules' 'python' 'gperf')
+depends=('giflib' 'kparts' 'kjs' 'phonon-qt5')
+makedepends=('extra-cmake-modules' 'gperf' 'git')
 provides=('khtml')
 conflicts=('khtml')
 groups=('kf5-aids-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

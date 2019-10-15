@@ -4,14 +4,15 @@
 
 pkgname=kiconthemes-git
 _pkgname=kiconthemes
-pkgver=5.43.0.r275.gf8d8090
+pkgver=5.64.0.r382.g37690b8
 pkgrel=1
 pkgdesc='Support for icon themes'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-svg' 'kconfigwidgets' 'kitemviews' 'karchive')
-makedepends=('extra-cmake-modules' 'python' 'mesa' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
+optdepends=('breeze-icons: fallback icon theme')
 provides=('kiconthemes')
 conflicts=('kiconthemes')
 groups=('kf5-git')
@@ -31,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

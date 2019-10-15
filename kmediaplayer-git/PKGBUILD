@@ -4,14 +4,14 @@
 
 pkgname=kmediaplayer-git
 _pkgname=kmediaplayer
-pkgver=5.43.0.r156.g5076353
+pkgver=5.64.0.r210.gb76387a
 pkgrel=1
 pkgdesc='Plugin interface for media player features'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kparts')
-makedepends=('extra-cmake-modules' 'python')
+makedepends=('extra-cmake-modules' 'git')
 provides=('kmediaplayer')
 conflicts=('kmediaplayer')
 groups=('kf5-aids-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

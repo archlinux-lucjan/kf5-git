@@ -4,14 +4,14 @@
 
 pkgname=kimageformats-git
 _pkgname=kimageformats
-pkgver=5.42.0.r137.g64e719f
+pkgver=5.63.0.r244.gb14ef35
 pkgrel=1
 pkgdesc='Image format plugins for Qt5'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base' 'openexr')
-makedepends=('extra-cmake-modules' 'karchive' 'mesa')
+makedepends=('extra-cmake-modules' 'karchive' 'git')
 optdepends=('karchive: plugin for Krita and OpenRaster images')
 provides=('kimageformats')
 conflicts=('kimageformats')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

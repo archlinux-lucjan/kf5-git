@@ -4,14 +4,14 @@
 
 pkgname=kdelibs4support-git
 _pkgname=kdelibs4support
-pkgver=5.43.0.r789.ga874b6a6
+pkgver=5.64.0.r902.gfa250e58
 pkgrel=1
 pkgdesc='Porting aid from KDELibs4'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kunitconversion' 'kitemmodels' 'kemoticons' 'kded' 'kparts')
-makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools' 'networkmanager' 'perl-uri' 'python' 'kdesignerplugin')
+makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools' 'networkmanager' 'perl-uri' 'kdesignerplugin' 'git')
 provides=('kdelibs4support')
 conflicts=('kdelibs4support')
 groups=('kf5-aids-git')
@@ -31,14 +31,10 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }
-
 
 package() {
   cd build

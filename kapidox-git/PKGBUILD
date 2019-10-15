@@ -4,14 +4,14 @@
 
 pkgname=kapidox-git
 _pkgname=kapidox
-pkgver=5.43.0.r402.ga08fb03
+pkgver=5.64.0.r442.gbae3cb3
 pkgrel=1
 pkgdesc='Frameworks API Documentation Tools'
 arch=('any')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('python-jinja' 'python-yaml')
-makedepends=('extra-cmake-modules' 'qt5-base')
+makedepends=('extra-cmake-modules' 'qt5-base' 'git')
 provides=('kapidox')
 conflicts=('kapidox')
 groups=('kf5-git')
@@ -31,7 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr
   make
 }

@@ -4,14 +4,14 @@
 
 pkgname=kactivities-stats-git
 _pkgname=kactivities-stats
-pkgver=5.43.0.r168.g126e5c1
+pkgver=5.64.0.r246.gf51da75
 pkgrel=1
 arch=('x86_64')
 pkgdesc="A library for accessing the usage data collected by the activities system"
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kactivities')
-makedepends=('extra-cmake-modules' 'boost' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'boost' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('kactivities-stats')
 conflicts=('kactivities-stats')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

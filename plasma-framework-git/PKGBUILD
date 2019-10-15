@@ -5,14 +5,14 @@
 
 pkgname=plasma-framework-git
 _pkgname=plasma-framework
-pkgver=5.43.0.r14816.g987002749
+pkgver=5.64.0.r15267.g7f52e22de
 pkgrel=1
 pkgdesc='Plasma library and runtime components based upon KF5 and Qt5'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('qt5-quickcontrols' 'kactivities' 'kdeclarative' 'kwayland')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'kdoctools' 'python' 'doxygen')
+depends=('kactivities' 'kdeclarative' 'kwayland' 'kirigami2')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'kdoctools' 'doxygen' 'git')
 provides=('plasma-framework')
 conflicts=('plasma-framework')
 groups=('kf5-git')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

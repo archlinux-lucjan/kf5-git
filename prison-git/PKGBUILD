@@ -5,17 +5,18 @@
 
 pkgname=prison-git
 _pkgname=prison
-pkgver=5.43.0.r149.gce0b958
+pkgver=5.64.0.r221.ge22ae93
 pkgrel=1
 pkgdesc="A barcode API to produce QRCode barcodes and DataMatrix barcodes"
-arch=(x86_64)
+arch=('x86_64')
 url='https://community.kde.org/Frameworks'
-license=(GPL)
-depends=(qt5-base libdmtx qrencode)
-makedepends=(extra-cmake-modules doxygen qt5-tools)
+license=('GPL')
+depends=('qt5-base' 'libdmtx' 'qrencode')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'qt5-declarative' 'git')
+optdepends=('qt5-declarative: QML bindings')
 provides=('prison')
 conflicts=('prison')
-groups=(kf5-git)
+groups=('kf5-git')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
@@ -32,9 +33,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

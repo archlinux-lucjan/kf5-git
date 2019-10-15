@@ -5,14 +5,14 @@
 
 pkgname=sonnet-git
 _pkgname=sonnet
-pkgver=5.43.0.r376.g9038a8e
+pkgver=5.64.0.r489.g561875e
 pkgrel=1
 pkgdesc='Spelling framework for Qt5'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'hunspell' 'aspell' 'hspell' 'libvoikko' 'doxygen')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'hunspell' 'aspell' 'hspell' 'libvoikko' 'doxygen' 'git')
 optdepends=('hunspell: spell checking via hunspell' 'aspell: spell checking via aspell' 
             'hspell: spell checking for Hebrew' 'libvoikko: Finnish support via Voikko')
 provides=('sonnet')
@@ -34,9 +34,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

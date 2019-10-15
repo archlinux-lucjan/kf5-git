@@ -4,14 +4,14 @@
 
 pkgname=frameworkintegration-git
 _pkgname=frameworkintegration
-pkgver=5.43.0.r389.g0d5299e
+pkgver=5.64.0.r478.g376308a
 pkgrel=1
 pkgdesc='Framework providing components to allow applications to integrate with a KDE Workspace'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kpackage' 'knewstuff')
-makedepends=('extra-cmake-modules' 'python' 'appstream-qt' 'packagekit-qt5')
+makedepends=('extra-cmake-modules' 'appstream-qt' 'packagekit-qt5' 'git')
 optdepends=('appstream-qt: dependency resolving via AppStream' 'packagekit-qt5: dependency resolving via AppStream')
 provides=('frameworkintegration')
 conflicts=('frameworkintegration')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   make

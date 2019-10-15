@@ -4,14 +4,14 @@
 
 pkgname=kunitconversion-git
 _pkgname=kunitconversion
-pkgver=5.43.0.r209.g286a033
+pkgver=5.64.0.r276.g2c688c9
 pkgrel=1
 pkgdesc='Support for unit conversion'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('ki18n')
-makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('kunitconversion')
 conflicts=('kunitconversion')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

@@ -3,14 +3,14 @@
 
 pkgname=qqc2-desktop-style-git
 _pkgname=qqc2-desktop-style
-pkgver=5.43.0.r99.gef53444
+pkgver=5.64.0.r299.g8e73751
 pkgrel=1
 pkgdesc='A style for Qt Quick Controls 2 to make it follow your desktop theme'
-arch=(x86_64)
+arch=('x86_64')
 url='https://community.kde.org/Frameworks'
-license=(LGPL)
-depends=(kirigami2 kiconthemes)
-makedepends=(extra-cmake-modules)
+license=('LGPL')
+depends=('kirigami2' 'kiconthemes')
+makedepends=('extra-cmake-modules' 'git')
 groups=('kf5-git')
 provides=('qqc2-desktop-style')
 conflicts=('qqc2-desktop-style')
@@ -30,9 +30,6 @@ prepare() {
 build() {
   cd build
   cmake ../$_pkgname \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

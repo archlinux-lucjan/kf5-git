@@ -4,14 +4,14 @@
 
 pkgname=kjs-git
 _pkgname=kjs
-pkgver=5.43.0.r184.gc050719
+pkgver=5.64.0.r243.g0ad8989
 pkgrel=1
 pkgdesc='Support for JS scripting in applications'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'kdoctools')
+makedepends=('extra-cmake-modules' 'kdoctools' 'git')
 provides=('kjs')
 conflicts=('kjs')
 groups=('kf5-aids-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

@@ -4,14 +4,14 @@
 
 pkgname=kpty-git
 _pkgname=kpty
-pkgver=5.43.0.r170.g7f4cb8c
+pkgver=5.64.0.r230.g00efe6b
 pkgrel=1
 pkgdesc='Pty abstraction'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kcoreaddons' 'ki18n' 'libutempter')
-makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('kpty')
 conflicts=('kpty')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

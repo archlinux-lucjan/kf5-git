@@ -4,15 +4,15 @@
 
 pkgname=kcodecs-git
 _pkgname=kcodecs
-pkgver=5.43.0.r195.g2352bc5
+pkgver=5.64.0.r273.ge0a74a2
 pkgrel=1
 pkgdesc='Provide a collection of methods to manipulate strings using various encodings'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'clang' 'python-pyqt5' 'python2-pyqt5' 'gperf' 'doxygen')
-optdepends=('python-pykf5: to use the Python 3 bindings' 'python2-pykf5: to use the Python 2 bindings')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'clang' 'python-pyqt5' 'gperf' 'doxygen' 'sip' 'git')
+optdepends=('python-pyqt5: for the Python bindings')
 provides=('kcodecs')
 conflicts=('kcodecs')
 groups=('kf5-git')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

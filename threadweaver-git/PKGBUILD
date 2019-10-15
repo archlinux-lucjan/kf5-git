@@ -5,14 +5,14 @@
 
 pkgname=threadweaver-git
 _pkgname=threadweaver
-pkgver=5.43.0.r345.g0580761
+pkgver=5.64.0.r409.g299dce2
 pkgrel=1
 pkgdesc='High-level multithreading framework'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'mesa' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'qt5-xmlpatterns' 'qt5-tools' 'qt5-doc' 'doxygen' 'git')
 provides=('threadweaver')
 conflicts=('threadweaver')
 groups=('kf5-git')
@@ -32,10 +32,8 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
+    -DQRC_SYNTAX=OFF \
     -DBUILD_QCH=ON
   make
 }

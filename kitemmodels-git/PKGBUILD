@@ -4,15 +4,15 @@
 
 pkgname=kitemmodels-git
 _pkgname=kitemmodels
-pkgver=5.43.0.r288.g35e4fb2
+pkgver=5.64.0.r369.g1c74538
 pkgrel=1
 pkgdesc='Models for Qt Model/View system'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'python2-pyqt5' 'python-pyqt5' 'clang' 'doxygen' 'qt5-tools')
-optdepends=('python-pykf5: to use the Python 3 bindings' 'python2-pykf5: to use the Python 2 bindings')
+makedepends=('extra-cmake-modules' 'python-pyqt5' 'clang' 'doxygen' 'qt5-tools' 'qt5-doc' 'sip' 'git')
+optdepends=('python-pyqt5: for the Python bindings')
 provides=('kitemmodels')
 conflicts=('kitemmodels')
 groups=('kf5-git')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

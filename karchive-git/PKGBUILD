@@ -4,14 +4,14 @@
 
 pkgname=karchive-git
 _pkgname=karchive
-pkgver=5.43.0.r255.gd3a9b56
+pkgver=5.64.0.r384.g330a2e4
 pkgrel=1
 pkgdesc='Qt 5 addon providing access to numerous types of archives'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-base')
-makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('karchive')
 conflicts=('karchive')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

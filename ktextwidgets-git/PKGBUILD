@@ -4,14 +4,14 @@
 
 pkgname=ktextwidgets-git
 _pkgname=ktextwidgets
-pkgver=5.43.0.r199.gd2b64d3
+pkgver=5.64.0.r273.g5cd5d6a
 pkgrel=1
 pkgdesc='Advanced text editing widgets'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kcompletion' 'kservice' 'kiconthemes' 'sonnet' 'qt5-speech')
-makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('ktextwidgets')
 conflicts=('ktextwidgets')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

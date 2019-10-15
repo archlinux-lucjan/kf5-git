@@ -4,17 +4,18 @@
 
 pkgname=kpeople-git
 _pkgname=kpeople
-pkgver=5.43.0.r1115.ga9377ad
+pkgver=5.64.0.r1210.g3a49a42
 pkgrel=1
 pkgdesc='A library that provides access to all contacts and the people who hold them'
-arch=(x86_64)
+arch=('x86_64')
 url='https://community.kde.org/Frameworks'
-license=(LGPL)
-depends=(kservice kwidgetsaddons kitemviews qt5-declarative)
-makedepends=(extra-cmake-modules python mesa doxygen qt5-tools)
+license=('LGPL')
+depends=('kservice' 'kwidgetsaddons' 'kitemviews')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'qt5-declarative' 'git')
+optdepends=('qt5-declarative: QML bindings')
 provides=('kpeople')
 conflicts=('kpeople')
-groups=(kf5-git)
+groups=('kf5-git')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
@@ -31,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

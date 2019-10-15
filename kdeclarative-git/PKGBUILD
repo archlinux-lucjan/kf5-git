@@ -4,14 +4,14 @@
 
 pkgname=kdeclarative-git
 _pkgname=kdeclarative
-pkgver=5.43.0.r560.g437a131
+pkgver=5.64.0.r705.g656fac5
 pkgrel=1
 pkgdesc='Provides integration of QML and KDE Frameworks'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kio' 'kpackage' 'libepoxy')
-makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('kdeclarative')
 conflicts=('kdeclarative')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

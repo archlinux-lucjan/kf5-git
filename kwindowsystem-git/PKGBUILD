@@ -4,14 +4,14 @@
 
 pkgname=kwindowsystem-git
 _pkgname=kwindowsystem
-pkgver=5.43.0.r357.gd57087f
+pkgver=5.64.0.r469.g7dc3830
 pkgrel=1
 pkgdesc='Access to the windowing system'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-x11extras')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'doxygen')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'doxygen' 'git')
 provides=('kwindowsystem')
 conflicts=('kwindowsystem')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

@@ -4,14 +4,14 @@
 
 pkgname=kdewebkit-git
 _pkgname=kdewebkit
-pkgver=5.43.0.r146.gd198b28
+pkgver=5.64.0.r206.g9c788cf
 pkgrel=1
 pkgdesc='KDE Integration for QtWebKit'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-webkit' 'kparts')
-makedepends=('extra-cmake-modules' 'python')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'git')
 provides=('kdewebkit')
 conflicts=('kdewebkit')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

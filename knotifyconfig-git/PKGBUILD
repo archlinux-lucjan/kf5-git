@@ -4,14 +4,14 @@
 
 pkgname=knotifyconfig-git
 _pkgname=knotifyconfig
-pkgver=5.43.0.r187.g8d1f607
+pkgver=5.64.0.r251.g3f6bb65
 pkgrel=1
 pkgdesc='Configuration system for KNotify'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('kio')
-makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
+depends=('kio' 'phonon-qt5')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('knotifyconfig')
 conflicts=('knotifyconfig')
 groups=('kf5-git')

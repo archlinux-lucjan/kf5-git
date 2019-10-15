@@ -4,14 +4,14 @@
 
 pkgname=breeze-icons-git
 _pkgname=breeze-icons
-pkgver=5.43.0.r1084.gc86e0a29
+pkgver=5.64.0.r1412.g83c8768b
 pkgrel=1
 pkgdesc='Breeze icon themes'
 arch=('any')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 groups=('kf5-git')
-makedepends=('extra-cmake-modules' 'qt5-base')
+makedepends=('extra-cmake-modules' 'qt5-base' 'git')
 provides=('breeze-icons')
 conflicts=('breeze-icons')
 source=("git://anongit.kde.org/$_pkgname.git")
@@ -30,8 +30,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
     -DBINARY_ICONS_RESOURCE=ON \
     -DBUILD_TESTING=OFF
   make

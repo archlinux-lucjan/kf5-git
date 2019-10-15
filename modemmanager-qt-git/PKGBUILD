@@ -5,15 +5,15 @@
 
 pkgname=modemmanager-qt-git
 _pkgname=modemmanager-qt
-pkgver=5.43.0.r369.g56577ab
+pkgver=5.64.0.r432.g2508682
 pkgrel=1
 pkgdesc='Qt wrapper for ModemManager DBus API'
-arch=(x86_64)
+arch=('x86_64')
 url='https://community.kde.org/Frameworks'
-license=(LGPL)
-depends=(modemmanager qt5-base)
-makedepends=(extra-cmake-modules doxygen qt5-tools)
-groups=(kf5-git)
+license=('LGPL')
+depends=('modemmanager' 'qt5-base')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
+groups=('kf5-git')
 provides=('modemmanager-qt')
 conflicts=('modemmanager-qt')
 source=("git://anongit.kde.org/$_pkgname.git")
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

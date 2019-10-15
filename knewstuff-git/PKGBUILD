@@ -4,14 +4,15 @@
 
 pkgname=knewstuff-git
 _pkgname=knewstuff
-pkgver=5.43.0.r516.g3525902
+pkgver=5.64.0.r703.g5d129d9
 pkgrel=1
 pkgdesc='Support for downloading application assets from the network'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kio')
-makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'qt5-declarative' 'git')
+optdepends=('kirigami2: QML components')
 provides=('knewstuff')
 conflicts=('knewstuff')
 groups=('kf5-git')
@@ -31,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

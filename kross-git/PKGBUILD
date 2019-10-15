@@ -4,14 +4,14 @@
 
 pkgname=kross-git
 _pkgname=kross
-pkgver=5.43.0.r193.ge091df7
+pkgver=5.64.0.r254.g0e2f283
 pkgrel=1
 pkgdesc='Multi-language application scripting'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('kparts')
-makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools' 'python')
+depends=('kparts' 'qt5-script')
+makedepends=('extra-cmake-modules' 'kdoctools' 'qt5-tools' 'git')
 provides=('kross')
 conflicts=('kross')
 groups=('kf5-aids-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

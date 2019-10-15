@@ -4,14 +4,15 @@
 
 pkgname=kactivities-git
 _pkgname=kactivities
-pkgver=5.43.0.r1171.g72e9c86
+pkgver=5.64.0.r1250.g8ece826d
 pkgrel=1
 arch=('x86_64')
 pkgdesc="Core components for the KDE's Activities"
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('kcoreaddons' 'kconfig' 'kwindowsystem' 'qt5-declarative')
-makedepends=('extra-cmake-modules' 'boost' 'python' 'doxygen' 'qt5-tools')
+depends=('kcoreaddons' 'kconfig' 'kwindowsystem')
+makedepends=('extra-cmake-modules' 'boost' 'doxygen' 'qt5-tools' 'qt5-doc' 'qt5-declarative' 'git')
+optdepends=('qt5-declarative: QML bindings')
 provides=('kactivities')
 conflicts=('kactivities')
 groups=('kf5-git')
@@ -31,10 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DQML_INSTALL_DIR=lib/qt/qml \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

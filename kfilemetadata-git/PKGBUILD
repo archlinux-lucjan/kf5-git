@@ -4,15 +4,16 @@
 
 pkgname=kfilemetadata-git
 _pkgname=kfilemetadata
-pkgver=5.43.0.r389.g4bbc7a2
+pkgver=5.64.0.r649.g1cf7215
 pkgrel=1
 pkgdesc="A library for extracting file metadata"
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('ki18n' 'karchive' 'exiv2' 'poppler-qt5' 'taglib' 'ffmpeg' 'ebook-tools')
-optdepends=('catdoc: Extract text from office 98 files')
-makedepends=('extra-cmake-modules' 'catdoc' 'python' 'doxygen' 'qt5-tools')
+depends=('ki18n' 'karchive' 'kconfig' 'kcoreaddons' 'exiv2' 'poppler-qt5' 'taglib' 'ffmpeg' 'ebook-tools')
+makedepends=('extra-cmake-modules' 'catdoc' 'doxygen' 'qt5-tools' 'qt5-doc' 'libappimage' 'git')
+optdepends=('libappimage: AppImage extractor'
+            'catdoc: Extract text from Office 98 files')
 provides=('kfilemetadata')
 conflicts=('kfilemetadata')
 groups=('kf5-git')
@@ -32,9 +33,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

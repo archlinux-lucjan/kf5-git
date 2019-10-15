@@ -4,14 +4,14 @@
 
 pkgname=ktexteditor-git
 _pkgname=ktexteditor
-pkgver=5.43.0.r1669.g0d0284e8
+pkgver=5.64.0.r2225.g8924d678
 pkgrel=1
 pkgdesc='Advanced embeddable text editor'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('kparts' 'syntax-highlighting' 'libgit2' 'editorconfig-core-c')
-makedepends=('extra-cmake-modules' 'python' 'doxygen' 'qt5-tools')
+depends=('ki18n' 'kconfig' 'kcrash' 'kdbusaddons')
+makedepends=('extra-cmake-modules' 'kdoctools' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('ktexteditor')
 conflicts=('ktexteditor')
 groups=('kf5-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

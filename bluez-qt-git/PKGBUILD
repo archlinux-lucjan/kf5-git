@@ -4,17 +4,18 @@
 
 pkgname=bluez-qt-git
 _pkgname=bluez-qt
-pkgver=5.43.0.r479.g526037f
+pkgver=5.64.0.r559.gc8c7d4c
 pkgrel=1
 pkgdesc='Qt wrapper for Bluez 5 DBus API'
-arch=(x86_64)
+arch=('x86_64')
 url='https://community.kde.org/Frameworks'
-license=(GPL2)
-depends=(qt5-declarative bluez)
-makedepends=(extra-cmake-modules mesa doxygen qt5-tools)
+license=('GPL2')
+depends=('qt5-base' 'bluez')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'qt5-declarative' 'git')
+optdepends=('qt5-declarative: QML bindings')
 provides=('bluez-qt')
 conflicts=('bluez-qt')
-groups=(kf5-git)
+groups=('kf5-git')
 source=("git://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
@@ -31,10 +32,9 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DUDEV_RULES_INSTALL_DIR=/usr/lib/udev/rules.d
+    -DUDEV_RULES_INSTALL_DIR=/usr/lib/udev/rules.d \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
   make
 }
 

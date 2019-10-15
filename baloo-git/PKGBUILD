@@ -4,14 +4,14 @@
 
 pkgname=baloo-git
 _pkgname=baloo
-pkgver=5.43.0.r2281.g1129a0e0
+pkgver=5.64.0.r2655.g29dce973
 pkgrel=1
 pkgdesc="A framework for searching and managing metadata"
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kfilemetadata' 'kidletime' 'kio' 'lmdb')
-makedepends=('extra-cmake-modules' 'kdoctools' 'python' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'kdoctools' 'doxygen' 'qt5-tools' 'qt5-doc' 'qt5-declarative' 'git')
 provides=('baloo')
 conflicts=('baloo')
 groups=('kf5-git')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

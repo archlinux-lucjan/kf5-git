@@ -4,14 +4,14 @@
 
 pkgname=kbookmarks-git
 _pkgname=kbookmarks
-pkgver=5.43.0.r197.gba1a358
+pkgver=5.64.0.r284.ge3f6058
 pkgrel=1
 pkgdesc='Support for bookmarks and the XBEL format'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kxmlgui')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'python' 'doxygen')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'doxygen' 'git')
 provides=('kbookmarks')
 conflicts=('kbookmarks')
 groups=('kf5-git')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
   make

@@ -4,14 +4,14 @@
 
 pkgname=kjsembed-git
 _pkgname=kjsembed
-pkgver=5.43.0.r159.ge1495a4
+pkgver=5.64.0.r214.ge0eca59
 pkgrel=1
 pkgdesc='Embedded JS'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('qt5-svg' 'ki18n' 'kjs')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'kdoctools' 'python')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'kdoctools' 'git')
 provides=('kjsembed')
 conflicts=('kjsembed')
 groups=('kf5-aids-git')
@@ -31,9 +31,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF
   make
 }

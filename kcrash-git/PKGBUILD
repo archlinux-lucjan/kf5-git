@@ -4,14 +4,14 @@
 
 pkgname=kcrash-git
 _pkgname=kcrash
-pkgver=5.43.0.r194.g9dd66a7
+pkgver=5.64.0.r267.g620db3b
 pkgrel=1
 pkgdesc='Support for application crash analysis and bug report from apps'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
 depends=('kcoreaddons' 'kwindowsystem')
-makedepends=('extra-cmake-modules' 'mesa' 'doxygen' 'qt5-tools')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 optdepends=('drkonqi: KDE crash handler application')
 provides=('kcrash')
 conflicts=('kcrash')
@@ -32,9 +32,6 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON

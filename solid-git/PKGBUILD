@@ -5,14 +5,15 @@
 
 pkgname=solid-git
 _pkgname=solid
-pkgver=5.43.0.r367.g9d7a417
+pkgver=5.64.0.r511.g280911f
 pkgrel=1
 pkgdesc='Hardware integration and detection'
 arch=('x86_64')
 url='https://community.kde.org/Frameworks'
 license=('LGPL')
-depends=('qt5-declarative' 'media-player-info' 'upower' 'udisks2')
-makedepends=('extra-cmake-modules' 'qt5-tools' 'doxygen')
+depends=('qt5-base' 'media-player-info' 'upower' 'udisks2')
+makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'doxygen' 'qt5-declarative' 'git')
+optdepends=('qt5-declarative: QML bindings')
 provides=('solid')
 conflicts=('solid')
 groups=('kf5-git')
@@ -32,11 +33,11 @@ prepare() {
 build() {
   cd build
   cmake ../${_pkgname} \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
     -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
+    -DBUILD_QCH=ON \
+    -DWITH_NEW_POWER_ASYNC_API=ON \
+    -DWITH_NEW_POWER_ASYNC_FREEDESKTOP=ON \
+    -DWITH_NEW_SOLID_JOB=ON # https://bugs.archlinux.org/task/64093
   make
 }
 
