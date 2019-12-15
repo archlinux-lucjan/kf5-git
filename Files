@@ -115,6 +115,8 @@
 │   └── PKGBUILD
 ├── kpty-git
 │   └── PKGBUILD
+├── kquickcharts-git
+│   └── PKGBUILD
 ├── kross-git
 │   └── PKGBUILD
 ├── krunner-git
@@ -165,4 +167,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-81 directories, 84 files
+82 directories, 85 files

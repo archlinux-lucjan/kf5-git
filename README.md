@@ -104,4 +104,5 @@ makepkg -srci
 * purpose
 * kholidays
 * kcalendarcore
-* kcontacts 
+* kcontacts
+* kquickcharts
