@@ -5,7 +5,7 @@
 
 pkgname=extra-cmake-modules-git
 _pkgname=extra-cmake-modules
-pkgver=5.66.0.r3125.g44adaad
+pkgver=5.67.0.r3127.g9b62540
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=('any')
@@ -30,7 +30,6 @@ pkgver() {
 prepare() {
   mkdir -p build
   cd $_pkgname
-  sed -e 's|/usr/bin/env python|/usr/bin/env python2|' -i find-modules/*.py
   # Don't create __init__.py
   patch -p1 -i ../ECM-no-init.py.patch
 }
