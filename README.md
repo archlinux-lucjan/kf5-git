@@ -1,7 +1,6 @@
-|#   KF5 - GIT for Arch Linux                        |
-:--------------------------------------------------------------------------------:
+#   KF5 - GIT for Arch Linux                        |
 
-# Download:
+## Download:
 
 ```
 git clone https://github.com/archlinux-lucjan/kf5-git.git
@@ -14,7 +13,7 @@ git clone https://gitlab.com/archlinux-lucjan/kf5-git.git
 
 ```
 
-# Install:
+## Install:
 
 ```
 cd /some_path/kf5-git/package_name-git
@@ -22,7 +21,7 @@ makepkg -srci
 
 ```
 
-# Setting package order:
+## Setting package order:
 
 * extra-cmake-modules
 * attica
