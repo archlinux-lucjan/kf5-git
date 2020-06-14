@@ -1,4 +1,4 @@
-#   KF5 - GIT for Arch Linux                        |
+#   KF5 - GIT for Arch Linux
 
 ## Download:
 
