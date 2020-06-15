@@ -4,7 +4,7 @@
 
 pkgname=kapidox-git
 _pkgname=kapidox
-pkgver=5.64.0.r442.gbae3cb3
+pkgver=5.72.0.r477.gb851d68
 pkgrel=1
 pkgdesc='Frameworks API Documentation Tools'
 arch=('any')
@@ -15,7 +15,7 @@ makedepends=('extra-cmake-modules' 'qt5-base' 'git')
 provides=('kapidox')
 conflicts=('kapidox')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -23,19 +23,13 @@ pkgver() {
   _ver="$(cat setup.py | grep -m1 version | grep -o "[[:digit:]]*" | paste -sd'.')"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DCMAKE_INSTALL_PREFIX=/usr
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
