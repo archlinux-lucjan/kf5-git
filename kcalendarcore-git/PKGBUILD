@@ -3,7 +3,7 @@
 
 pkgname=kcalendarcore-git
 _pkgname=kcalendarcore
-pkgver=5.64.0.r1074.gbf12f4124
+pkgver=5.72.0.r1132.g57af4a3e5
 pkgrel=1
 pkgdesc="The KDE calendar access library"
 arch=('x86_64')
@@ -15,7 +15,7 @@ conflicts=('kcalcore' 'kcalendarcore')
 provides=('kcalcore' 'kcalendarcore')
 replaces=('kcalcore')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -24,19 +24,13 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
-prepare() {
-  mkdir -p build
-}
-
 build() {
-  cd build
-  cmake ../$_pkgname \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="$pkgdir" install
+  DESTDIR="$pkgdir" cmake --install build
 }
