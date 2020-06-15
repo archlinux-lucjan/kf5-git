@@ -5,7 +5,7 @@
 
 pkgname=plasma-framework-git
 _pkgname=plasma-framework
-pkgver=5.64.0.r15267.g7f52e22de
+pkgver=5.72.0.r15449.gd0d6e73b3
 pkgrel=1
 pkgdesc='Plasma library and runtime components based upon KF5 and Qt5'
 arch=('x86_64')
@@ -16,7 +16,7 @@ makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'kdoctools' 'doxygen' '
 provides=('plasma-framework')
 conflicts=('plasma-framework')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -24,20 +24,14 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
