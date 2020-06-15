@@ -3,7 +3,7 @@
 
 pkgname=kirigami2-git
 _pkgname=kirigami
-pkgver=5.64.0.r1951.g06e5e678
+pkgver=5.72.0.r2234.gbace64a0
 pkgrel=1
 pkgdesc='A QtQuick based components set'
 arch=(x86_64)
@@ -14,12 +14,8 @@ makedepends=('extra-cmake-modules' 'qt5-tools' 'qt5-doc' 'qt5-svg' 'kpackage' 'd
 provides=('kirigami2')
 conflicts=('kirigami2')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
-
-prepare() {
-  mkdir -p build
-}
 
 pkgver() {
   cd $_pkgname
@@ -28,14 +24,12 @@ pkgver() {
 }
 
 build() {
-  cd build
-    cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="$pkgdir" install
+  DESTDIR="$pkgdir" cmake --install build
 }
