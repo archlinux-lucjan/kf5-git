@@ -4,7 +4,7 @@
 pkgname=kcontacts-git
 _pkgname=kcontacts
 epoch=1
-pkgver=5.64.0.r3119.g0fd72d1f
+pkgver=5.72.0.r3170.gae84b798
 pkgrel=1
 pkgdesc="Address book API for KDE"
 arch=('x86_64')
@@ -15,7 +15,7 @@ makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('kcontacts')
 conflicts=('kcontacts')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -24,19 +24,13 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
-prepare() {
-  mkdir -p build
-}
-
 build() {
-  cd build
-  cmake ../$_pkgname \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="$pkgdir" install
+  DESTDIR="$pkgdir" cmake --install build
 }
