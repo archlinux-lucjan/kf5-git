@@ -4,7 +4,7 @@
 
 pkgname=kdewebkit-git
 _pkgname=kdewebkit
-pkgver=5.64.0.r206.g9c788cf
+pkgver=5.72.0.r232.g7bd8fe4
 pkgrel=1
 pkgdesc='KDE Integration for QtWebKit'
 arch=('x86_64')
@@ -14,8 +14,8 @@ depends=('qt5-webkit' 'kparts')
 makedepends=('extra-cmake-modules' 'qt5-tools' 'git')
 provides=('kdewebkit')
 conflicts=('kdewebkit')
-groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+groups=('kf5-aids-git')
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -23,19 +23,13 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-            
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
