@@ -3,7 +3,7 @@
 
 pkgname=kholidays-git
 _pkgname=kholidays
-pkgver=5.64.0.r825.g4729b9d
+pkgver=5.72.0.r870.gdbe18f1
 pkgrel=1
 epoch=1
 pkgdesc="KDE library for regional holiday information"
@@ -16,7 +16,7 @@ optdepends=('qt5-declarative: QML bindings')
 groups=('kf5-git')
 provides=('kholidays')
 conflicts=('kholidays')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -25,19 +25,13 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
-prepare() {
-  mkdir -p build
-}
-
 build() {
-  cd build
-  cmake ../$_pkgname \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="$pkgdir" install
+  DESTDIR="$pkgdir" cmake --install build
 }
