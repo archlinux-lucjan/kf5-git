@@ -4,7 +4,7 @@
 
 pkgname=knewstuff-git
 _pkgname=knewstuff
-pkgver=5.64.0.r703.g5d129d9
+pkgver=5.72.0.r842.g1ac10c65
 pkgrel=1
 pkgdesc='Support for downloading application assets from the network'
 arch=('x86_64')
@@ -16,7 +16,7 @@ optdepends=('kirigami2: QML components')
 provides=('knewstuff')
 conflicts=('knewstuff')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -24,20 +24,14 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
