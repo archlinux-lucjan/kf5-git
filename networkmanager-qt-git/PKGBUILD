@@ -5,7 +5,7 @@
 
 pkgname=networkmanager-qt-git
 _pkgname=networkmanager-qt
-pkgver=5.64.0.r1013.g9134fee
+pkgver=5.72.0.r1053.g9be9443
 pkgrel=1
 pkgdesc='Qt wrapper for NetworkManager API'
 arch=('x86_64')
@@ -16,7 +16,7 @@ makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 groups=('kf5-git')
 provides=('networkmanager-qt')
 conflicts=('networkmanager-qt')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -24,20 +24,14 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
