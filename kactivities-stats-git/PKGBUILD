@@ -4,7 +4,7 @@
 
 pkgname=kactivities-stats-git
 _pkgname=kactivities-stats
-pkgver=5.64.0.r246.gf51da75
+pkgver=5.72.0.r285.g6ad7fc2
 pkgrel=1
 arch=('x86_64')
 pkgdesc="A library for accessing the usage data collected by the activities system"
@@ -15,7 +15,7 @@ makedepends=('extra-cmake-modules' 'boost' 'doxygen' 'qt5-tools' 'qt5-doc' 'git'
 provides=('kactivities-stats')
 conflicts=('kactivities-stats')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -23,20 +23,14 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
