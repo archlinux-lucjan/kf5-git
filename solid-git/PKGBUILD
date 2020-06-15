@@ -5,7 +5,7 @@
 
 pkgname=solid-git
 _pkgname=solid
-pkgver=5.64.0.r511.g280911f
+pkgver=5.72.0.r575.gf530966
 pkgrel=1
 pkgdesc='Hardware integration and detection'
 arch=('x86_64')
@@ -17,7 +17,7 @@ optdepends=('qt5-declarative: QML bindings')
 provides=('solid')
 conflicts=('solid')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -26,22 +26,16 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-prepare() {
-  mkdir -p build
-}
-
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON \
     -DWITH_NEW_POWER_ASYNC_API=ON \
     -DWITH_NEW_POWER_ASYNC_FREEDESKTOP=ON \
     -DWITH_NEW_SOLID_JOB=ON # https://bugs.archlinux.org/task/64093
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
