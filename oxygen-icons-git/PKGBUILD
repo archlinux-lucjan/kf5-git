@@ -6,7 +6,7 @@
 
 pkgname=oxygen-icons-git
 _pkgname=oxygen-icons5
-pkgver=5.64.0.r201.ga97eb9f
+pkgver=5.72.0.r229.g42c2ac0
 pkgrel=1
 pkgdesc="The Oxygen Icon Theme"
 arch=('any')
@@ -16,7 +16,7 @@ makedepends=('extra-cmake-modules' 'qt5-base' 'git')
 provides=('oxygen-icons')
 conflicts=('oxygen-icons')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -24,18 +24,12 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname}
-  make
+  cmake -B build -S $_pkgname
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="$pkgdir" install
+  DESTDIR="$pkgdir" cmake --install build
 }
