@@ -4,7 +4,7 @@
 
 pkgname=kwallet-git
 _pkgname=kwallet
-pkgver=5.64.0.r922.gdf037e3
+pkgver=5.72.0.r965.g37db18a
 pkgrel=1
 pkgdesc='Secure and unified container for user passwords'
 arch=('x86_64')
@@ -16,7 +16,7 @@ optdepends=('kwalletmanager: Configuration GUI')
 provides=('kwallet')
 conflicts=('kwallet')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -25,19 +25,13 @@ pkgver() {
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
-prepare() {
-  mkdir -p build
-}
-
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
