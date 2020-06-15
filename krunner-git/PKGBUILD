@@ -4,7 +4,7 @@
 
 pkgname=krunner-git
 _pkgname=krunner
-pkgver=5.64.0.r383.gb723ac3
+pkgver=5.72.0.r441.g9c8d13d
 pkgrel=1
 pkgdesc='Framework for providing different actions given a string query'
 arch=('x86_64')
@@ -15,7 +15,7 @@ depends=('plasma-framework' 'threadweaver')
 makedepends=('extra-cmake-modules' 'kdoctools' 'doxygen' 'qt5-tools' 'qt5-doc' 'git')
 provides=('krunner')
 conflicts=('krunner')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -23,20 +23,14 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
