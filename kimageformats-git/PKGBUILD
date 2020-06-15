@@ -4,7 +4,7 @@
 
 pkgname=kimageformats-git
 _pkgname=kimageformats
-pkgver=5.63.0.r244.gb14ef35
+pkgver=5.71.0.r275.ga446331
 pkgrel=1
 pkgdesc='Image format plugins for Qt5'
 arch=('x86_64')
@@ -16,7 +16,7 @@ optdepends=('karchive: plugin for Krita and OpenRaster images')
 provides=('kimageformats')
 conflicts=('kimageformats')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -25,18 +25,12 @@ pkgver() {
    echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
-prepare() {
-  mkdir -p build
-}
-
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
