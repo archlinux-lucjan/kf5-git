@@ -4,7 +4,7 @@
 
 pkgname=kcompletion-git
 _pkgname=kcompletion
-pkgver=5.64.0.r322.g175c811
+pkgver=5.72.0.r370.g30919db
 pkgrel=1
 pkgdesc='Text completion helpers and widgets'
 arch=('x86_64')
@@ -16,7 +16,7 @@ optdepends=('python-pyqt5: for the Python bindings')
 provides=('kcompletion')
 conflicts=('kcompletion')
 groups=('kf5-git')
-source=("git://anongit.kde.org/$_pkgname.git")
+source=("git+https://anongit.kde.org/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
@@ -24,20 +24,14 @@ pkgver() {
   _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
-   
-prepare() {
-  mkdir -p build
-}
 
 build() {
-  cd build
-  cmake ../${_pkgname} \
+  cmake -B build -S $_pkgname \
     -DBUILD_TESTING=OFF \
     -DBUILD_QCH=ON
-  make
+  cmake --build build
 }
 
 package() {
-  cd build
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
