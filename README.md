@@ -105,3 +105,4 @@ makepkg -srci
 * kcalendarcore
 * kcontacts
 * kquickcharts
+* kdav

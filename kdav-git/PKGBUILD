@@ -1,0 +1,36 @@
+# Maintainer: Piotr Górski <lucjan.lucjanov@gmail.com>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=kdav-git
+_pkgname=kdav
+pkgver=5.73.0.r1233.gaa7504b
+pkgrel=1
+epoch=1
+pkgdesc="A DAV protocol implemention with KJobs"
+arch=('x86_64')
+url="https://community.kde.org/Frameworks"
+license=('LGPL')
+depends=('kio' 'qt5-xmlpatterns')
+makedepends=('extra-cmake-modules' 'doxygen' 'qt5-tools' 'git')
+groups=('kf5-git')
+provides=('kdav')
+conflicts=('kdav')
+source=("git+https://anongit.kde.org/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cmake -B build -S $_pkgname \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=ON
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+} 
