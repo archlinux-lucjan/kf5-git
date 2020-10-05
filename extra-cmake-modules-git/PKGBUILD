@@ -5,7 +5,7 @@
 
 pkgname=extra-cmake-modules-git
 _pkgname=extra-cmake-modules
-pkgver=5.72.0.r3160.g110f62d
+pkgver=5.75.0.r3194.g693781d
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=('any')
@@ -17,9 +17,10 @@ makedepends=('python-sphinx' 'python-requests' 'qt5-tools' 'git')
 conflicts=('extra-cmake-modules')
 provides=('extra-cmake-modules')
 source=("git+https://anongit.kde.org/$_pkgname.git"
-        'ECM-no-init.py.patch')
+        'ECM-no-init.py.patch' 'fix-pykf5-tests.patch')
 sha1sums=('SKIP'
-          '7ca60747096c1816302edf5b21a9bb3bea55995b')
+          '7ca60747096c1816302edf5b21a9bb3bea55995b'
+          '72f4fd66996358dbf9d8b8fba9ddc77f31f264ae')
 
 pkgver() {
   cd $_pkgname
@@ -29,16 +30,20 @@ pkgver() {
 
 prepare() {
   patch -d $_pkgname -p1 -i ../ECM-no-init.py.patch # Don't create __init__.py
+  patch -d $_pkgname -p1 -i ../fix-pykf5-tests.patch # Fix locating pykf5 modules when running tests
 }
 
 build() {
   cmake -B build -S $_pkgname \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DBUILD_HTML_DOCS=OFF \
-    -DBUILD_QTHELP_DOCS=ON \
-    -DBUILD_TESTING=OFF
+    -DBUILD_QTHELP_DOCS=ON
   cmake --build build
 }
+
+#check() {
+#  cmake --build build --target test
+#}
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
