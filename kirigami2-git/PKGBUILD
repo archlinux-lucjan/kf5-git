@@ -3,7 +3,7 @@
 
 pkgname=kirigami2-git
 _pkgname=kirigami
-pkgver=5.72.0.r2234.gbace64a0
+pkgver=5.79.0.r2632.g2678dcdc
 pkgrel=1
 pkgdesc='A QtQuick based components set'
 arch=(x86_64)
@@ -19,7 +19,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
