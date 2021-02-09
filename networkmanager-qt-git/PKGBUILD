@@ -5,7 +5,7 @@
 
 pkgname=networkmanager-qt-git
 _pkgname=networkmanager-qt
-pkgver=5.72.0.r1053.g9be9443
+pkgver=5.79.0.r1079.g8b28a35
 pkgrel=1
 pkgdesc='Qt wrapper for NetworkManager API'
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
