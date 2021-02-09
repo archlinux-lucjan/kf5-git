@@ -4,7 +4,7 @@
 
 pkgname=kxmlgui-git
 _pkgname=kxmlgui
-pkgver=5.72.0.r629.g2f7c17d
+pkgver=5.79.0.r716.gc8c0e88
 pkgrel=1
 pkgdesc='User configurable main windows'
 arch=('x86_64')
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
