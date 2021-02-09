@@ -4,7 +4,7 @@
 
 pkgname=kpeople-git
 _pkgname=kpeople
-pkgver=5.72.0.r1257.gc68b83b
+pkgver=5.79.0.r1292.gb4d64c7
 pkgrel=1
 pkgdesc='A library that provides access to all contacts and the people who hold them'
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
