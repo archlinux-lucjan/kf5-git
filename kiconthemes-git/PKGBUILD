@@ -4,7 +4,7 @@
 
 pkgname=kiconthemes-git
 _pkgname=kiconthemes
-pkgver=5.72.0.r428.g19d2ec4
+pkgver=5.79.0.r469.gc161dfe
 pkgrel=1
 pkgdesc='Support for icon themes'
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
