@@ -4,7 +4,7 @@
 
 pkgname=khtml-git
 _pkgname=khtml
-pkgver=5.72.0.r499.g58e7377
+pkgver=5.79.0.r528.gfb3c9ef
 pkgrel=1
 pkgdesc='KHTML APIs'
 arch=('x86_64')
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
