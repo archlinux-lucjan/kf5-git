@@ -4,7 +4,7 @@
 
 pkgname=kdoctools-git
 _pkgname=kdoctools
-pkgver=5.72.0.r543.g6c75e51
+pkgver=5.79.0.r586.g5d4d5df
 pkgrel=1
 pkgdesc='Documentation generation from docbook'
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
