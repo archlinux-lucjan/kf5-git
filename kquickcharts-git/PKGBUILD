@@ -4,7 +4,7 @@
 
 pkgname=kquickcharts-git
 _pkgname=kquickcharts
-pkgver=5.72.0.r352.g4441f90
+pkgver=5.79.0.r421.g87a8098
 pkgrel=1
 pkgdesc='A QtQuick plugin providing high-performance charts'
 arch=('x86_64')
@@ -18,7 +18,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
