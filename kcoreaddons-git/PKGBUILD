@@ -4,7 +4,7 @@
 
 pkgname=kcoreaddons-git
 _pkgname=kcoreaddons
-pkgver=5.72.0.r987.g2e07a74
+pkgver=5.79.0.r1160.g4987a4f3
 pkgrel=1
 pkgdesc='Addons to QtCore'
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
