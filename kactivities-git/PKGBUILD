@@ -4,7 +4,7 @@
 
 pkgname=kactivities-git
 _pkgname=kactivities
-pkgver=5.72.0.r1292.g699fbc5d
+pkgver=5.79.0.r1320.g89a7262b
 pkgrel=1
 arch=('x86_64')
 pkgdesc="Core components for the KDE's Activities"
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
