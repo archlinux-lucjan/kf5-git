@@ -4,7 +4,7 @@
 
 pkgname=krunner-git
 _pkgname=krunner
-pkgver=5.72.0.r441.g9c8d13d
+pkgver=5.79.0.r574.gf960c07
 pkgrel=1
 pkgdesc='Framework for providing different actions given a string query'
 arch=('x86_64')
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
