@@ -4,7 +4,7 @@
 
 pkgname=kmediaplayer-git
 _pkgname=kmediaplayer
-pkgver=5.72.0.r242.gdb26d34
+pkgver=5.79.0.r267.gbefff7e
 pkgrel=1
 pkgdesc='Plugin interface for media player features'
 arch=('x86_64')
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
