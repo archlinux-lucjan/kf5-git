@@ -4,7 +4,7 @@
 
 pkgname=kbookmarks-git
 _pkgname=kbookmarks
-pkgver=5.72.0.r339.g31e2e33
+pkgver=5.79.0.r379.g4af1536
 pkgrel=1
 pkgdesc='Support for bookmarks and the XBEL format'
 arch=('x86_64')
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
