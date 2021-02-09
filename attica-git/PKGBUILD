@@ -4,7 +4,7 @@
 
 pkgname=attica-git
 _pkgname=attica
-pkgver=5.72.0.r755.gc0624e9
+pkgver=5.79.0.r786.ga32b77b
 pkgrel=1
 arch=('x86_64')
 pkgdesc='Qt5 library that implements the Open Collaboration Services API'
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
