@@ -4,7 +4,7 @@
 pkgname=kcontacts-git
 _pkgname=kcontacts
 epoch=1
-pkgver=5.72.0.r3170.gae84b798
+pkgver=5.79.0.r3213.g384974c2
 pkgrel=1
 pkgdesc="Address book API for KDE"
 arch=('x86_64')
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
