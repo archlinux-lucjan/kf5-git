@@ -4,7 +4,7 @@
 
 pkgname=kjobwidgets-git
 _pkgname=kjobwidgets
-pkgver=5.72.0.r302.g4a3a066
+pkgver=5.79.0.r335.gb1e9307
 pkgrel=1
 pkgdesc='Widgets for tracking KJob instances'
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
