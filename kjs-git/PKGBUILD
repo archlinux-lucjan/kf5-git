@@ -4,7 +4,7 @@
 
 pkgname=kjs-git
 _pkgname=kjs
-pkgver=5.72.0.r287.g3e4e0d9
+pkgver=5.79.0.r311.g9b9dd97
 pkgrel=1
 pkgdesc='Support for JS scripting in applications'
 arch=('x86_64')
@@ -20,7 +20,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
