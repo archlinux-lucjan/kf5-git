@@ -6,7 +6,7 @@
 
 pkgname=oxygen-icons-git
 _pkgname=oxygen-icons5
-pkgver=5.72.0.r229.g42c2ac0
+pkgver=5.79.0.r254.g54bdcf7
 pkgrel=1
 pkgdesc="The Oxygen Icon Theme"
 arch=('any')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
