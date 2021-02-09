@@ -5,7 +5,7 @@
 
 pkgname=solid-git
 _pkgname=solid
-pkgver=5.72.0.r575.gf530966
+pkgver=5.79.0.r637.gb53ba7c
 pkgrel=1
 pkgdesc='Hardware integration and detection'
 arch=('x86_64')
@@ -22,7 +22,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
