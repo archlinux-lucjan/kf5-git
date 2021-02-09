@@ -5,7 +5,7 @@
 
 pkgname=kxmlrpcclient-git
 _pkgname=kxmlrpcclient
-pkgver=5.72.0.r400.g1005c7036
+pkgver=5.79.0.r424.g754706e4a
 pkgrel=1
 pkgdesc="XML-RPC client library for KDE"
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
 
