@@ -5,7 +5,7 @@
 
 pkgname=threadweaver-git
 _pkgname=threadweaver
-pkgver=5.72.0.r446.g0d92f21
+pkgver=5.80.0.r474.g737ace5
 pkgrel=1
 pkgdesc='High-level multithreading framework'
 arch=('x86_64')
@@ -21,7 +21,7 @@ sha256sums=('SKIP')
 
 pkgver() {
   cd $_pkgname
-  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF5_VERSION' | cut -d '"' -f2 | tr - .)"
+  _ver="$(cat CMakeLists.txt | grep -m1 'set(KF_VERSION' | cut -d '"' -f2 | tr - .)"
   echo "${_ver}.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
 }
    
