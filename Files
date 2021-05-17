@@ -9,6 +9,7 @@
 │   └── PKGBUILD
 ├── extra-cmake-modules-git
 │   ├── ECM-no-init.py.patch
+│   ├── ecm-sphinx4.patch
 │   └── PKGBUILD
 ├── Files
 ├── frameworkintegration-git
@@ -169,4 +170,4 @@
 └── threadweaver-git
     └── PKGBUILD
 
-83 directories, 86 files
+83 directories, 87 files
