@@ -5,7 +5,7 @@
 
 pkgname=extra-cmake-modules-git
 _pkgname=extra-cmake-modules
-pkgver=5.83.0.r3301.g63479ef0
+pkgver=5.85.0.r3357.g602e4816
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=('any')
@@ -17,11 +17,9 @@ makedepends=('python-sphinx' 'python-requests' 'qt5-tools' 'git')
 conflicts=('extra-cmake-modules')
 provides=('extra-cmake-modules')
 source=("git+https://anongit.kde.org/$_pkgname.git"
-        'ECM-no-init.py.patch'
-        'ecm-sphinx4.patch')
+        'ECM-no-init.py.patch')
 sha1sums=('SKIP'
-          '7ca60747096c1816302edf5b21a9bb3bea55995b'
-          '80e82ef1c33b82b667ede20205a19d99b25ec169')
+          '7ca60747096c1816302edf5b21a9bb3bea55995b')
 
 pkgver() {
   cd $_pkgname
@@ -31,7 +29,6 @@ pkgver() {
 
 prepare() {
   patch -d $_pkgname -p1 < ECM-no-init.py.patch # Don't create __init__.py
-  patch -d $_pkgname -p1 < ecm-sphinx4.patch # Fix build with sphinx 4
 }
 
 build() {
