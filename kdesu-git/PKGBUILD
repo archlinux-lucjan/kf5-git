@@ -5,7 +5,7 @@
 
 pkgname=kdesu-git
 _pkgname=kdesu
-pkgver=5.79.0.r437.g0ea8a6e
+pkgver=5.99.0.r521.gbda57d5
 pkgrel=1
 pkgdesc='Integration with su for elevated privileges'
 arch=('x86_64')
@@ -35,8 +35,4 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-
-# See FS#44277
-  chown :nobody "$pkgdir"/usr/lib/kf5/kdesud
-  chmod g+s "$pkgdir"/usr/lib/kf5/kdesud
 }
